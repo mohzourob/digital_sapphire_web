@@ -6,7 +6,7 @@ const ButtonStyled = styled(antButton)`
   color: ${(props) => props.theme.body};
 
   &:hover {
-    background: none;
+    background: red;
   }
 `;
 
