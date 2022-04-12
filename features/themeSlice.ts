@@ -1,7 +1,8 @@
+import { PaletteMode } from '@mui/material';
 import { createSlice } from '@reduxjs/toolkit';
 
 interface ThemeState {
-  theme: string
+  theme: PaletteMode
 } 
 
 const initialState: ThemeState = {
