@@ -4,7 +4,16 @@ import Image from "next/image";
 import logo from "../public/logo.png";
 
 const Logo = () => {
-  return <StyledLogo alt="Logo" src={logo} width={45} height={45} />;
+  return (
+    <StyledLogo
+      alt="Logo"
+      src={logo}
+      layout="fixed"
+      width={45}
+      height={45}
+      loading="lazy"
+    />
+  );
 };
 
 const StyledLogo = styled(Image)`

@@ -10,8 +10,14 @@ import ClientOnly from "./HOC/ClientOnly";
 
 const Carousel = ({ items, responsive }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const slidePrev = () => setActiveIndex(activeIndex - 1);
-  const slideNext = () => setActiveIndex(activeIndex + 1);
+  const slidePrev = () => {
+    if (activeIndex === 0) return;
+    setActiveIndex(activeIndex - 1);
+  };
+  const slideNext = () => {
+    if (activeIndex === items.length) return;
+    setActiveIndex(activeIndex + 1);
+  };
 
   return (
     <ClientOnly>

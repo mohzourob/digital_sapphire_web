@@ -69,7 +69,7 @@ const TopOrganizationCarousel = () => {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <Title variant="h6" color="text.primary">
-              Top organizations
+              Top Organizations
             </Title>
           </Grid>
           <Grid item>

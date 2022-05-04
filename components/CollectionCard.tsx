@@ -19,7 +19,6 @@ type NFTItemProps = {
   price: number;
   image: StaticImageData;
   likedNumber: number;
-  alt: string;
   verified?: Boolean;
 };
 
@@ -29,7 +28,6 @@ const CollectionCard = ({
   price,
   image,
   likedNumber,
-  alt,
   verified,
 }: NFTItemProps) => {
   return (
@@ -45,7 +43,7 @@ const CollectionCard = ({
             <ProfileImage src={profilePic} width={50} height={50} />
             {verified && (
               <VerifiedIcon>
-                <Image src={checkIcon} />
+                <Image alt="Verified Icon" src={checkIcon} loading="lazy" />
               </VerifiedIcon>
             )}
           </Grid>
@@ -73,7 +71,13 @@ const CollectionCard = ({
       >
         <Grid item xs={6}>
           <ImageWraper>
-            <Image alt={name} src={image} layout="fill" objectFit="cover" />
+            <Image
+              alt={name}
+              src={image}
+              layout="fill"
+              objectFit="cover"
+              loading="lazy"
+            />
           </ImageWraper>
         </Grid>
 
@@ -87,18 +91,36 @@ const CollectionCard = ({
           >
             <Grid item xs={6}>
               <ImageWraper>
-                <Image alt={name} src={image} layout="fill" objectFit="cover" />
+                <Image
+                  alt={name}
+                  src={image}
+                  layout="fill"
+                  objectFit="cover"
+                  loading="lazy"
+                />
               </ImageWraper>
             </Grid>
             <Grid item xs={6}>
               <ImageWraper>
-                <Image alt={name} src={image} layout="fill" objectFit="cover" />
+                <Image
+                  alt={name}
+                  src={image}
+                  layout="fill"
+                  objectFit="cover"
+                  loading="lazy"
+                />
               </ImageWraper>
             </Grid>
           </Grid>
           <Grid item xs={12}>
             <ImageWraper>
-              <Image alt={name} src={image} layout="fill" objectFit="cover" />
+              <Image
+                alt={name}
+                src={image}
+                layout="fill"
+                objectFit="cover"
+                loading="lazy"
+              />
             </ImageWraper>
           </Grid>
         </Grid>

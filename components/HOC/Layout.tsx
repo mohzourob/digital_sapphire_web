@@ -6,8 +6,10 @@ import {
 } from "@mui/material";
 import { useMemo } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
 
-const Layout = ({ children }: any) => {
+const Layout = ({ children, noNav, noFooter }: any) => {
   const mode = useSelector((state: RootStateOrAny) => state.theme.theme);
 
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
@@ -15,10 +17,12 @@ const Layout = ({ children }: any) => {
     <ThemeProvider theme={theme}>
       <GlobalStyles
         styles={{
-          body: { background: mode === "light" ? "	#fff" : "#20283b" },
+          body: { background: mode === "light" ? "	#FFF" : "#20283b" },
         }}
       />
+      {!noNav && <Navbar />}
       {children}
+      {!noFooter && <Footer />}
     </ThemeProvider>
   );
 };
@@ -39,6 +43,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
             main: "#83b1d4",
           },
           divider: "#20283b",
+          border: "rgba(32, 40,  95, 0.4)",
           text: {
             primary: "#222",
             secondary: "rgba(0, 0, 0, 0.6)",
@@ -54,7 +59,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
           secondary: {
             main: "#83b1d4",
           },
-          divider: "rgba(255, 255, 255, 0.1)",
+          divider: "rgba(255, 255, 255, 0.4)",
+          border: "rgba(255, 255,  255, 0.4)",
           background: {
             default: "#20283b",
             paper: "#20283b",

@@ -37,7 +37,13 @@ const OrganizationCard = ({
           marginTop="0.5rem"
         >
           <OrgName variant="subtitle1">{name}</OrgName>
-          <Image src={OrgIcon} width={16} height={16} />
+          <Image
+            alt={name}
+            src={OrgIcon}
+            width={16}
+            height={16}
+            loading="lazy"
+          />
         </Grid>
 
         <OrgDescription variant="body2">{description}</OrgDescription>

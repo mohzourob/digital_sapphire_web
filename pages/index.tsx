@@ -1,19 +1,24 @@
 import type { NextPage } from "next";
+
 import Hero from "../components/Hero";
 import Layout from "../components/HOC/Layout";
 import TopItemsCarousel from "../components/TopItemsCarousel";
-import Navbar from "../components/Navbar";
 import TopCollectionsCarousel from "../components/TopCollectionsCarousel";
 import TopOrganizationCarousel from "../components/TopOrganizationCarousel";
+import TopSeller from "../components/TopSeller";
+import About from "../components/About";
+import YouTubeVideo from "../components/YouTubeVideo";
 
 const Home: NextPage = () => {
   return (
     <Layout>
-      <Navbar />
       <Hero />
       <TopItemsCarousel />
       <TopCollectionsCarousel />
       <TopOrganizationCarousel />
+      <TopSeller />
+      <About />
+      <YouTubeVideo />
     </Layout>
   );
 };

@@ -16,7 +16,6 @@ const items = [
     creator="Sami"
     price={23}
     image={NFTImage}
-    alt="NFT"
     likedNumber={100}
     verified
   />,
@@ -25,7 +24,6 @@ const items = [
     creator="Samiss"
     price={23.3}
     image={NFTImage}
-    alt="NFT"
     likedNumber={200}
   />,
   <CollectionCard
@@ -33,7 +31,6 @@ const items = [
     creator="Samisswwwwwwwwwwwwwssdasdasdsads"
     price={100}
     image={NFTImage}
-    alt="NFT"
     likedNumber={300}
   />,
   <CollectionCard
@@ -41,7 +38,6 @@ const items = [
     creator="Samiss"
     price={1000.8888888}
     image={NFTImage}
-    alt="NFT"
     likedNumber={400}
   />,
   <CollectionCard
@@ -49,7 +45,6 @@ const items = [
     creator="Samiss"
     price={22}
     image={NFTImage}
-    alt="NFT"
     likedNumber={500}
   />,
 ];
@@ -61,7 +56,7 @@ const TopCollectionsCarousel = () => {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <Title variant="h6" color="text.primary">
-              Top collections
+              Top Collections
             </Title>
           </Grid>
           <Grid item>

@@ -1,12 +1,5 @@
 import styled from "@emotion/styled";
-import {
-  Grid,
-  IconButton,
-  Container,
-  Typography,
-  Stack,
-  Link,
-} from "@mui/material";
+import { Grid, Container, Typography, Stack, Link } from "@mui/material";
 import Image from "next/image";
 
 import monlizaImage from "../public/monlizaImage.png";
@@ -42,21 +35,48 @@ const Hero = () => {
             </Grid>
           </Stack>
         </Grid>
-        <Grid item>
-          <Image src={monlizaImage} />
+        <Grid
+          container
+          item
+          xs={6}
+          md={5}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item>
+            <ImageWraper>
+              <Image
+                alt="main pic"
+                src={monlizaImage}
+                width={430}
+                height={500}
+                loading="lazy"
+              />
+            </ImageWraper>
+          </Grid>
         </Grid>
       </StyledGrid>
     </Container>
   );
 };
 
+const ImageWraper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  img {
+    border-radius: 15px;
+  }
+`;
+
 const StyledGrid = styled(Grid)`
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
@@ -70,7 +90,7 @@ const StyledHead = styled(Typography)`
   font-weight: 700;
   margin-top: 3rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     margin-top: 0;
   }
 `;
@@ -80,7 +100,7 @@ const StyledBody = styled(Typography)`
   font-size: 1.1rem;
   margin: 1rem 0rem;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     margin: 1rem auto;
   }
 `;
@@ -91,7 +111,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   width: fit-content;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     margin: auto;
     justify-content: center;
   }

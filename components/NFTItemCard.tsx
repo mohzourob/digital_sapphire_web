@@ -28,7 +28,7 @@ const NFTItemCard = ({
   return (
     <StyledDiv>
       <StyledImage>
-        <Image src={image} alt={alt} />
+        <Image src={image} alt={name} loading="lazy" />
         <LikeButton>
           <FavoriteBorderIcon
             style={{ fontSize: "1rem", marginRight: "2px" }}
@@ -39,7 +39,13 @@ const NFTItemCard = ({
       <NFTName variant="h4">{name}</NFTName>
       <Grid container wrap="nowrap">
         <Grid item xs={3}>
-          <ProfileImage src={profilePic} width={40} height={40} />
+          <ProfileImage
+            alt={creator}
+            src={profilePic}
+            width={40}
+            height={40}
+            loading="lazy"
+          />
         </Grid>
         <Grid item xs={6}>
           <Stack>
@@ -59,7 +65,13 @@ const NFTItemCard = ({
                 {price}
               </Price>
               <Grid item xs={4}>
-                <Image src={ETH} width={18} height={18} />
+                <Image
+                  alt="Eth icon"
+                  src={ETH}
+                  width={18}
+                  height={18}
+                  loading="lazy"
+                />
               </Grid>
             </Grid>
           </Stack>
@@ -82,7 +94,7 @@ const NFTItemCard = ({
 
 const StyledDiv = styled(Stack)(({ theme }: any) => {
   return {
-    margin: "2rem auto",
+    margin: "1rem auto 0",
     border: "1px solid",
     borderColor: theme.palette.secondary.main,
     borderRadius: "20px",

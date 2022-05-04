@@ -52,6 +52,22 @@ const items = [
     alt="NFT"
     likedNumber={500}
   />,
+  <NFTItemCard
+    name="Hamlet Contemplates Yorick's"
+    creator="Samiss"
+    price={22}
+    image={NFTImage}
+    alt="NFT"
+    likedNumber={500}
+  />,
+  <NFTItemCard
+    name="Hamlet Contemplates Yorick's"
+    creator="Samiss"
+    price={22}
+    image={NFTImage}
+    alt="NFT"
+    likedNumber={500}
+  />,
 ];
 
 const TopItemsCarousel = () => {
@@ -61,7 +77,7 @@ const TopItemsCarousel = () => {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>
             <Title variant="h6" color="text.primary">
-              Top items
+              Top Items
             </Title>
           </Grid>
           <Grid item>
