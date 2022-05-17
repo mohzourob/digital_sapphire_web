@@ -4,12 +4,16 @@ import {
   PaletteMode,
   ThemeProvider,
 } from "@mui/material";
+import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
-import Footer from "../Footer";
-import Navbar from "../Navbar";
+import Footer from "../Global/Footer/Footer";
+import ModalComponent from "../Global/ModalComponent";
+import Navbar from "../Global/Navbar/Navbar";
 
 const Layout = ({ children, noNav, noFooter }: any) => {
+  const router = useRouter();
+
   const mode = useSelector((state: RootStateOrAny) => state.theme.theme);
 
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
@@ -17,10 +21,16 @@ const Layout = ({ children, noNav, noFooter }: any) => {
     <ThemeProvider theme={theme}>
       <GlobalStyles
         styles={{
-          body: { background: mode === "light" ? "	#FFF" : "#20283b" },
+          "html, body": {
+            background: mode === "light" ? "	#FFF" : "#20283b",
+          },
+          ".MuiButton-endIcon": {
+            marginRight: router.locale === "en" ? "-4px" : "5px !important",
+          },
         }}
       />
       {!noNav && <Navbar />}
+      <ModalComponent />
       {children}
       {!noFooter && <Footer />}
     </ThemeProvider>
@@ -48,6 +58,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
             primary: "#222",
             secondary: "rgba(0, 0, 0, 0.6)",
             button: "#000",
+            success: "#92D28F",
+            fail: "#EC5757",
           },
         }
       : {
@@ -69,6 +81,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
             primary: "#fff",
             secondary: "rgba(255, 255, 255, 0.6)",
             button: "#fff",
+            success: "#92D28F",
+            fail: "#EC5757",
           },
         }),
   },

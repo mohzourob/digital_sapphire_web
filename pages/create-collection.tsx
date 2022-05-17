@@ -1,13 +1,13 @@
 import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import ExploreCollection from "../components/ExplorePages/ExploreCollection";
 
 import Layout from "../components/HOC/Layout";
+import CreateCollectionForm from "../components/Forms/CreateCollectionForm";
 
-const ExploreCollectionPage: NextPage = () => {
+const CreateCollectionPage: NextPage = () => {
   return (
     <Layout>
-      <ExploreCollection />
+      <CreateCollectionForm />
     </Layout>
   );
 };
@@ -18,4 +18,4 @@ export const getStaticProps = async ({ locale }: any) => ({
   },
 });
 
-export default ExploreCollectionPage;
+export default CreateCollectionPage;
