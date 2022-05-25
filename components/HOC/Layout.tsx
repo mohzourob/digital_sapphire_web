@@ -5,14 +5,25 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
-import { RootStateOrAny, useSelector } from "react-redux";
+import { useEffect, useMemo } from "react";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { setTheme } from "../../features/themeSlice";
 import Footer from "../Global/Footer/Footer";
 import ModalComponent from "../Global/ModalComponent";
 import Navbar from "../Global/Navbar/Navbar";
 
 const Layout = ({ children, noNav, noFooter }: any) => {
   const router = useRouter();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("theme") === "light" ||
+      localStorage.getItem("theme") === "dark"
+    ) {
+      dispatch(setTheme(localStorage.getItem("theme")));
+    }
+  }, []);
 
   const mode = useSelector((state: RootStateOrAny) => state.theme.theme);
 
@@ -22,7 +33,7 @@ const Layout = ({ children, noNav, noFooter }: any) => {
       <GlobalStyles
         styles={{
           "html, body": {
-            background: mode === "light" ? "	#FFF" : "#20283b",
+            background: mode === "light" ? "#FFF" : "#20283b",
           },
           ".MuiButton-endIcon": {
             marginRight: router.locale === "en" ? "-4px" : "5px !important",

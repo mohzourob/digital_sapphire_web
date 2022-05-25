@@ -43,7 +43,6 @@ const ExploreItem = () => {
                 creator="Sami"
                 price={23}
                 image={NFTImage}
-                alt="NFT"
                 likedNumber={100}
               />
             </Grid>

@@ -9,7 +9,7 @@ const MainButton = (props: any) => {
         textTransform: "none",
         fontSize: "0.8rem",
         fontWeight: "500",
-        padding: `${props.size === "small" ? "0.6rem 3rem" : "0.6rem 3.5rem"}`,
+        padding: "0.6rem 3rem",
         border: "1px solid",
         borderColor: "secondary.main",
         borderRadius: "8px",

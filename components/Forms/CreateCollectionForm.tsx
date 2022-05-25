@@ -13,6 +13,12 @@ import {
 import Image from "next/image";
 
 import CollectionCard from "../HomePage/TopCollection/CollectionCard";
+import { DiscordSVG, FacebookSVG, TwitterSVG } from "../SVG";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import EmailIcon from "@mui/icons-material/Email";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import WebIcon from "@mui/icons-material/Web";
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 
 const CreateCollectionForm = () => {
   const [selectedImage, setSelectedImage] = useState<any>();
@@ -224,6 +230,57 @@ const CreateCollectionForm = () => {
                 <MenuItem value={"Art"}>Art</MenuItem>
                 <MenuItem value={"Random"}>Random</MenuItem>
               </Select>
+
+              <Typography variant="subtitle2" color="text.primary" marginY={2}>
+                Links
+              </Typography>
+
+              <Links>
+                <IconLink>
+                  <WebIcon
+                    color="primary"
+                    fontSize="medium"
+                    sx={{ marginLeft: "3px", marginTop: "3px" }}
+                  />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+                <IconLink>
+                  <DiscordSVG fill="white" width={30} />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+                <IconLink>
+                  <InstagramIcon
+                    color="primary"
+                    fontSize="medium"
+                    sx={{ marginLeft: "3px", marginTop: "3px" }}
+                  />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+                <IconLink>
+                  <EmailIcon
+                    color="primary"
+                    fontSize="medium"
+                    sx={{ marginLeft: "3px", marginTop: "3px" }}
+                  />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+                <IconLink>
+                  <TelegramIcon
+                    color="primary"
+                    fontSize="medium"
+                    sx={{ marginLeft: "3px", marginTop: "3px" }}
+                  />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+                <IconLink>
+                  <TwitterSVG fill="white" width={30} />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+                <IconLink>
+                  <FacebookSVG fill="white" width={30} />
+                  <input type="url" placeholder="yoursite.com" />
+                </IconLink>
+              </Links>
             </form>
           </Wrapper>
 
@@ -364,6 +421,50 @@ const TextArea = styled.textarea(({ theme }: any) => {
 
     ":focus": {
       outline: `1px solid ${theme.palette.primary.main}`,
+    },
+  };
+});
+
+const Links = styled.div(({ theme }: any) => {
+  return {
+    width: "100%",
+    marginButtom: "1rem",
+    border: `1px solid ${theme.palette.border}`,
+    borderRadius: "8px",
+
+    div: {
+      input: {
+        width: "100%",
+        padding: "1rem 1rem 1rem 2.5rem",
+        background: "transparent",
+        color: theme.palette.text.primary,
+        border: "none",
+        borderBottom: `1px solid ${theme.palette.border}`,
+
+        ":focus": {
+          borderRadius: "8px",
+          outline: `1px solid ${theme.palette.primary.main}`,
+        },
+      },
+
+      ":last-of-type": {
+        input: {
+          border: "none",
+        },
+      },
+    },
+  };
+});
+
+const IconLink = styled.div(({ theme }: any) => {
+  return {
+    width: "100%",
+    position: "relative",
+
+    svg: {
+      position: "absolute",
+      top: "8px",
+      left: "7px",
     },
   };
 });

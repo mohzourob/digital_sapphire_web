@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { useMoralis } from "react-moralis";
+import Link from "next/link";
 import styled from "@emotion/styled";
 import {
   Grid,
@@ -21,16 +25,20 @@ import NotificationsDropdown from "./NotificationsDropdown";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import MobileDrawer from "../MobileDrawer";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const { isAuthenticated, logout } = useMoralis();
   const { t } = useTranslation("homePage");
 
   const theme = useSelector((state: RootStateOrAny) => state.theme.theme);
+
+  const logOut = async () => {
+    await logout();
+    console.log("logged out");
+  };
 
   return (
     <CustomAppBar position="sticky" enableColorOnDark>
@@ -41,10 +49,10 @@ const Navbar = () => {
           dir={router.locale === "en" ? "ltr" : "rtl"}
         >
           <Grid container alignItems="center" justifyContent="space-between">
-            <Grid item mr={2} md={0.5} lg={0.5}>
+            <Grid item xs={2} md={0.5} lg={0.5}>
               <Logo />
             </Grid>
-            <Grid sx={{ display: { xs: "none", md: "block" } }} item md={4.5}>
+            <Grid item xs={8} md={4.5} justifyContent="center">
               <SearchInput text={t("search")} />
             </Grid>
             <Grid
@@ -53,7 +61,7 @@ const Navbar = () => {
               md={1}
               justifyContent="center"
             >
-              <ExploreMenu t={t} />
+              <ExploreMenu />
             </Grid>
             <Grid
               sx={{ display: { xs: "none", md: "flex" } }}
@@ -61,18 +69,18 @@ const Navbar = () => {
               md={1}
               justifyContent="center"
             >
-              <CreateMenu t={t} />
+              <CreateMenu />
             </Grid>
-            <Grid
+            {/* <Grid
               sx={{ display: { xs: "none", md: "flex" } }}
               item
               md={0.5}
               justifyContent="center"
             >
               <NotificationsDropdown />
-            </Grid>
+            </Grid> */}
             <Grid
-              sx={{ display: { xs: "flex", md: "flex" } }}
+              sx={{ display: { xs: "none", md: "flex" } }}
               item
               md={0.5}
               justifyContent="center"
@@ -90,7 +98,7 @@ const Navbar = () => {
 
             <Grid
               item
-              sx={{ display: { xs: "flex", md: "flex" } }}
+              sx={{ display: { xs: "none", md: "flex" } }}
               md={0.5}
               justifyContent="center"
             >
@@ -103,23 +111,62 @@ const Navbar = () => {
               </Link>
             </Grid>
 
-            <Grid
-              item
-              sx={{ display: { xs: "none", md: "flex" } }}
-              md={3}
-              lg={2.5}
-              justifyContent="flex-end"
-            >
-              <MainButton
-                startIcon={
-                  router.locale === "en" ? <AccountBalanceWalletIcon /> : null
-                }
-                endIcon={
-                  router.locale === "ar" ? <AccountBalanceWalletIcon /> : null
-                }
+            {!isAuthenticated && (
+              <Link href={"/login"} passHref>
+                <Grid
+                  item
+                  sx={{ display: { xs: "none", md: "flex" } }}
+                  md={3}
+                  lg={2.5}
+                  justifyContent="flex-end"
+                >
+                  <MainButton
+                    startIcon={
+                      router.locale === "en" ? (
+                        <AccountBalanceWalletIcon />
+                      ) : null
+                    }
+                    endIcon={
+                      router.locale === "ar" ? (
+                        <AccountBalanceWalletIcon />
+                      ) : null
+                    }
+                  >
+                    {t("connectWallet")}
+                  </MainButton>
+                </Grid>
+              </Link>
+            )}
+
+            {isAuthenticated && (
+              <Grid
+                item
+                sx={{ display: { xs: "none", md: "flex" } }}
+                md={3}
+                lg={2.5}
+                justifyContent="flex-end"
               >
-                {t("connectWallet")}
-              </MainButton>
+                <MainButton
+                  onClick={logOut}
+                  startIcon={
+                    router.locale === "en" ? <AccountBalanceWalletIcon /> : null
+                  }
+                  endIcon={
+                    router.locale === "ar" ? <AccountBalanceWalletIcon /> : null
+                  }
+                >
+                  Logout
+                </MainButton>
+              </Grid>
+            )}
+
+            <Grid
+              sx={{ display: { xs: "flex", md: "none" } }}
+              item
+              xs={1}
+              justifyContent="end"
+            >
+              <MobileDrawer />
             </Grid>
           </Grid>
         </Toolbar>

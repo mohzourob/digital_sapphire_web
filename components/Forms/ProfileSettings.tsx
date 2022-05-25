@@ -211,7 +211,7 @@ const ProfileSettings = () => {
               />
 
               <Typography variant="subtitle2" color="text.primary" marginY={1}>
-                Email Address
+                Links
               </Typography>
 
               <Links>

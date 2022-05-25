@@ -124,7 +124,7 @@ const NFTItemCard = ({
             </>
           )}
 
-          {!owner && <MainButton size="small">{t("buy")}</MainButton>}
+          {!owner && <MainButton>{t("buy")}</MainButton>}
         </Grid>
         <Grid item>
           <IconButton>

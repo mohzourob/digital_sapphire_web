@@ -27,6 +27,7 @@ const StyledLogo = styled.div`
   width: 45px;
   height: 45px;
   position: relative;
+  cursor: pointer;
 `;
 
 export default Logo;

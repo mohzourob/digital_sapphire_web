@@ -164,7 +164,7 @@ const ItemDetails = () => {
               </Grid>
 
               <Grid item container xs={6} justifyContent="end">
-                <MainButton size="small">Buy now</MainButton>
+                <MainButton>Buy now</MainButton>
               </Grid>
             </Grid>
           </Stack>

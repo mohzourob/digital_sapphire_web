@@ -123,9 +123,7 @@ const PriceFilter = () => {
               </Button>
             </Grid>
             <Grid item>
-              <MainButton size="small" style={{ padding: "6px 8px" }}>
-                Apply
-              </MainButton>
+              <MainButton style={{ padding: "6px 8px" }}>Apply</MainButton>
             </Grid>
           </Grid>
         </MenuItem>
