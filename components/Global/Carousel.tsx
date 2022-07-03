@@ -21,7 +21,7 @@ const Carousel = ({ items, responsive }: any) => {
 
   return (
     <ClientOnly>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <SyledWarper>
           <AliceCarousel
             mouseTracking

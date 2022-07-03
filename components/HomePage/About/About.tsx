@@ -47,7 +47,7 @@ const About = () => {
   ];
 
   return (
-    <Container maxWidth="md" dir={router.locale === "en" ? "ltr" : "rtl"}>
+    <Container maxWidth="lg" dir={router.locale === "en" ? "ltr" : "rtl"}>
       <Stack>
         <Title variant="h1" color="text.primary">
           {t("aboutHeader")}

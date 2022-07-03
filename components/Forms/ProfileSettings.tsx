@@ -80,7 +80,7 @@ const ProfileSettings = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Grid
         container
         justifyContent="space-between"

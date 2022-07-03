@@ -36,7 +36,7 @@ const Profile = () => {
         />
       </ImageWraper>
 
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Grid container>
           <Grid item xs={12} md={3}>
             <Grid container justifyContent="center" position="relative">

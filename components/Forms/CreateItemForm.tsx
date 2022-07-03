@@ -65,7 +65,7 @@ const CreateItemForm = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Typography variant="h6" color="text.primary" marginTop={4}>
         Create New Item
       </Typography>

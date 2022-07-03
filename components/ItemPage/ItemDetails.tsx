@@ -11,7 +11,7 @@ import ETH from "../../public/ETH.svg";
 
 const ItemDetails = () => {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Grid container marginY={4} columnSpacing={3}>
         <Grid item xs={12} sm={4}>
           <ImageWraper>

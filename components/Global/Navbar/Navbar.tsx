@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <CustomAppBar position="sticky" enableColorOnDark>
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Toolbar
           disableGutters
           sx={{ height: "100%" }}

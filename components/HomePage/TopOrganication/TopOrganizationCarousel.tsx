@@ -77,7 +77,7 @@ const TopOrganizationCarousel = () => {
   const router = useRouter();
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Stack marginTop="3rem">
         <Grid
           container

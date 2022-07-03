@@ -3,7 +3,7 @@ import { Container } from "@mui/material";
 
 const YouTubeVideo = () => {
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Video>
         <iframe
           src="https://www.youtube-nocookie.com/embed/kHybf1aC-jE"

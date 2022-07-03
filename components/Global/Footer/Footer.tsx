@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <Foot>
-      <Container maxWidth="md" dir={router.locale === "en" ? "ltr" : "rtl"}>
+      <Container maxWidth="lg" dir={router.locale === "en" ? "ltr" : "rtl"}>
         <Grid container justifyContent="space-between">
           <Grid item xs={5} lg={3}>
             <Stack marginBottom="2rem">
