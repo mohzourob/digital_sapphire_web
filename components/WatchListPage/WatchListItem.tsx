@@ -28,7 +28,7 @@ const WatchListItem = () => {
 
   return (
     <Item>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid
           container
           justifyContent="space-between"

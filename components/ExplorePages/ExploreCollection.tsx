@@ -10,7 +10,7 @@ import ExploreFilter from "./ExploreFilter";
 
 const ExploreCollection = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Main>
         <Typography
           variant="h6"
@@ -41,9 +41,8 @@ const ExploreCollection = () => {
               <CollectionCard
                 name="Hamlet Contemplates Yorick's"
                 creator="Sami"
-                price={23}
                 image={NFTImage}
-                likedNumber={100}
+                itemsNumber={23}
                 verified
               />
             </Grid>

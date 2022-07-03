@@ -59,7 +59,7 @@ const TopCollectionsCarousel = () => {
   const router = useRouter();
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Stack marginTop="3rem">
         <Grid
           container

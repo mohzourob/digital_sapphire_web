@@ -9,7 +9,7 @@ import ExploreFilter from "./ExploreFilter";
 
 const ExploreItem = () => {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Main>
         <Typography
           variant="h6"

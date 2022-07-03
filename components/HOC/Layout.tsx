@@ -33,7 +33,7 @@ const Layout = ({ children, noNav, noFooter }: any) => {
       <GlobalStyles
         styles={{
           "html, body": {
-            background: mode === "light" ? "#FFF" : "#20283b",
+            background: mode === "light" ? "#fafafa" : "#20283b",
           },
           ".MuiButton-endIcon": {
             marginRight: router.locale === "en" ? "-4px" : "5px !important",
@@ -58,17 +58,17 @@ const getDesignTokens = (mode: PaletteMode) => ({
           // palette values for light mode
           primary: {
             main: "#20283b",
-            nav: "#fff",
+            nav: "#fafafa",
           },
           secondary: {
             main: "#83b1d4",
           },
           divider: "#20283b",
-          border: "rgba(32, 40,  95, 0.4)",
+          border: "#ccc",
           text: {
             primary: "#222",
             secondary: "rgba(0, 0, 0, 0.6)",
-            button: "#000",
+            button: "#fff",
             success: "#92D28F",
             fail: "#EC5757",
           },
