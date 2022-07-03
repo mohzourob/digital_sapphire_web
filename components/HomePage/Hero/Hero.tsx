@@ -17,7 +17,7 @@ const Hero = () => {
   const { t } = useTranslation("homePage");
 
   return (
-    <Container maxWidth="xl" dir={router.locale === "en" ? "ltr" : "rtl"}>
+    <Container maxWidth="md" dir={router.locale === "en" ? "ltr" : "rtl"}>
       <StyledGrid container>
         <StyledMain item container md={6}>
           <Stack>

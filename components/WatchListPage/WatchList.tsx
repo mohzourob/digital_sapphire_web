@@ -4,7 +4,7 @@ import WatchListItem from "./WatchListItem";
 const WatchList = () => {
   return (
     <>
-      <Container maxWidth="xl">
+      <Container maxWidth="md">
         <Typography
           variant="h6"
           color="text.primary"

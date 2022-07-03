@@ -62,7 +62,7 @@ const TopSeller = () => {
   const router = useRouter();
 
   return (
-    <Container maxWidth="xl" dir={router.locale === "en" ? "ltr" : "rtl"}>
+    <Container maxWidth="md" dir={router.locale === "en" ? "ltr" : "rtl"}>
       <Stack marginTop="4rem" marginBottom="2rem">
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item>

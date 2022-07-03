@@ -17,7 +17,7 @@ const Collection = () => {
         <Image src={cover} alt="cover" layout="fill" objectFit="cover" />
       </ImageWraper>
 
-      <Container maxWidth="xl">
+      <Container maxWidth="md">
         <Grid container columnSpacing={4}>
           <CollectionInfo />
 

@@ -79,7 +79,7 @@ const TopItemsCarousel = () => {
   const { t } = useTranslation("homePage");
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="md">
       <Stack marginTop="3rem">
         <Grid
           container
