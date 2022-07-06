@@ -70,7 +70,7 @@ const TopCollectionsCarousel = () => {
           <Grid item>
             <Typography
               variant="h6"
-              color="text.primary"
+              color="text.secondButton"
               sx={{
                 marginRight: router.locale === "ar" ? "3rem" : "0rem",
                 marginLeft: router.locale === "en" ? "3rem" : "0rem",
@@ -82,7 +82,7 @@ const TopCollectionsCarousel = () => {
           <Grid item>
             <Link href="/explore-collection" passHref>
               <Explore
-                color="text.primary"
+                color="text.secondButton"
                 sx={{
                   marginRight: router.locale === "en" ? "3rem" : "0rem",
                   marginLeft: router.locale === "ar" ? "3rem" : "0rem",

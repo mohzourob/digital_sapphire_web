@@ -9,16 +9,7 @@ import ETH from "../../public/ETH.svg";
 const CollectionInfo = () => {
   return (
     <Grid item xs={12} md={3} paddingX={2}>
-      <Grid
-        container
-        justifyContent="center"
-        position="relative"
-        sx={{
-          backgroundColor: "#6A1D4C",
-          paddingBottom: "4rem",
-          borderRadius: "0px 0px 36px 36px",
-        }}
-      >
+      <Info container justifyContent="center">
         <Stack marginTop="2rem" width="100%">
           <ProfileImage>
             <Image
@@ -31,21 +22,26 @@ const CollectionInfo = () => {
 
           <Typography
             variant="h6"
-            color="text.primary"
+            color="white"
             marginTop={5}
             textAlign="center"
           >
             Sami Sabbah
           </Typography>
 
-          <Typography variant="body2" color="text.secondary" textAlign="center">
+          <Typography variant="body2" color="white" textAlign="center">
             Created by <Link href="#">NFTKingCreator</Link>
           </Typography>
 
           <div style={{ width: "80%", margin: "auto" }}>
-            <Grid container justifyContent="space-between" marginTop={2}>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              marginTop={2}
+            >
               <Grid item xs={5}>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="white" fontWeight={200}>
                   Floor Price
                 </Typography>
               </Grid>
@@ -69,9 +65,14 @@ const CollectionInfo = () => {
               </Grid>
             </Grid>
 
-            <Grid container justifyContent="space-between" marginTop={2}>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              marginTop={2}
+            >
               <Grid item xs={6}>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="white" fontWeight={200}>
                   Volume Traded
                 </Typography>
               </Grid>
@@ -95,37 +96,63 @@ const CollectionInfo = () => {
               </Grid>
             </Grid>
 
-            <Grid container justifyContent="space-between" marginTop={2}>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              marginTop={2}
+            >
               <Grid item>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="white" fontWeight={200}>
                   Owners
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography variant="body2" color="text.primary">
+                <Typography variant="body2" color="white">
                   608
                 </Typography>
               </Grid>
             </Grid>
 
-            <Grid container justifyContent="space-between" marginTop={2}>
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              marginTop={2}
+            >
               <Grid item>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="white" fontWeight={200}>
                   Items
                 </Typography>
               </Grid>
               <Grid item>
-                <Typography variant="body2" color="text.primary">
+                <Typography variant="body2" color="text.button">
                   22.2k
                 </Typography>
               </Grid>
             </Grid>
           </div>
         </Stack>
-      </Grid>
+      </Info>
     </Grid>
   );
 };
+
+const Info = styled(Grid)(({ theme }: any) => {
+  return {
+    position: "relative",
+    backgroundColor: theme.palette.secondary.back,
+    paddingBottom: "4rem",
+    borderRadius: "0px 0px 36px 36px",
+
+    a: {
+      color: "#6a6ad6",
+      ":hover": {
+        opacity: "0.8",
+      },
+    },
+  };
+});
 
 const ProfileImage = styled.div(({ theme }: any) => {
   return {
@@ -149,7 +176,7 @@ const Price = styled(Grid)(({ theme }: any) => {
     overflow: "hidden",
     textOverflow: "ellipsis",
     fontSize: "0.9rem",
-    color: theme.palette.text.primary,
+    color: theme.palette.text.button,
   };
 });
 

@@ -1,5 +1,12 @@
 import styled from "@emotion/styled";
-import { Container, Grid, Stack, Typography } from "@mui/material";
+import {
+  Container,
+  Divider,
+  Grid,
+  Stack,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -8,6 +15,8 @@ import NFTImage from "../../public/NFT.png";
 import ItemDetailsDescription from "./ItemDetailsDescription";
 import MainButton from "../Global/MainButton";
 import ETH from "../../public/ETH.svg";
+import { Create } from "@mui/icons-material";
+import Link from "next/link";
 
 const ItemDetails = () => {
   return (
@@ -21,9 +30,55 @@ const ItemDetails = () => {
 
         <Grid item xs={12} sm={8}>
           <Stack>
-            <Grid container justifyContent="space-between">
+            <Grid container justifyContent="space-between" alignItems="center">
               <Grid item xs={6}>
-                <NFTName>“The Fantasy Flower illustration ”</NFTName>
+                <HeaderName>“The Fantasy Flower illustration ”</HeaderName>
+              </Grid>
+
+              <Grid item container xs={6} justifyContent="end">
+                <MainButton>Buy now</MainButton>
+              </Grid>
+            </Grid>
+
+            <Divider sx={{ my: 2 }} />
+
+            <Grid container alignItems="center" marginY={2}>
+              <Grid item container xs={6}>
+                <Grid item marginRight={1}>
+                  <Typography color="text.primary" variant="body1">
+                    Current Price
+                  </Typography>
+                </Grid>
+
+                <Grid
+                  item
+                  container
+                  xs={12}
+                  md={2}
+                  wrap="nowrap"
+                  alignItems="center"
+                  justifyContent="flex-start"
+                >
+                  <Tooltip title="0.0000000000000000024" placement="top">
+                    <Price xs={8}>0.024</Price>
+                  </Tooltip>
+
+                  <Grid item xs={4} container alignItems="center">
+                    <Image
+                      alt="Eth icon"
+                      src={ETH}
+                      width={18}
+                      height={18}
+                      loading="lazy"
+                    />
+                  </Grid>
+                </Grid>
+
+                <Grid item xs={12} md={4}>
+                  <Typography color="text.primary" variant="body1">
+                    (61.31$)
+                  </Typography>
+                </Grid>
               </Grid>
 
               <Grid item container xs={6} justifyContent="flex-end">
@@ -72,13 +127,15 @@ const ItemDetails = () => {
                     <Grid item xs={8} lg={10}>
                       <Stack>
                         <Typography
-                          color="text.primary"
+                          color="text.button"
                           fontWeight={100}
                           variant="body2"
                         >
                           Owned By
                         </Typography>
-                        <NFTName variant="body1">Ralph Garraway</NFTName>
+                        <Link href={"#"}>
+                          <OwnedBy variant="body1">Ralph Garraway</OwnedBy>
+                        </Link>
                       </Stack>
                     </Grid>
                   </Grid>
@@ -110,13 +167,15 @@ const ItemDetails = () => {
                     <Grid item xs={8} lg={10}>
                       <Stack>
                         <Typography
-                          color="text.primary"
+                          color="text.button"
                           fontWeight={100}
                           variant="body2"
                         >
                           Created By
                         </Typography>
-                        <NFTName variant="body1">Freddie Carpenter</NFTName>
+                        <CreatorName variant="body1">
+                          Freddie Carpenter
+                        </CreatorName>
                       </Stack>
                     </Grid>
                   </Grid>
@@ -133,40 +192,6 @@ const ItemDetails = () => {
             </Body>
 
             <ItemDetailsDescription />
-
-            <Grid container justifyContent="space-between" alignItems="center">
-              <Grid item container xs={6} justifyContent="space-between">
-                <Grid item xs={12} md={4}>
-                  <Typography color="text.primary" variant="body1">
-                    Current Price
-                  </Typography>
-                </Grid>
-
-                <Grid item container xs={12} md={4} wrap="nowrap">
-                  <NFTName xs={8}>0.024</NFTName>
-
-                  <Grid item xs={4}>
-                    <Image
-                      alt="Eth icon"
-                      src={ETH}
-                      width={18}
-                      height={18}
-                      loading="lazy"
-                    />
-                  </Grid>
-                </Grid>
-
-                <Grid item xs={12} md={4}>
-                  <Typography color="text.primary" variant="body1">
-                    (61.31$)
-                  </Typography>
-                </Grid>
-              </Grid>
-
-              <Grid item container xs={6} justifyContent="end">
-                <MainButton>Buy now</MainButton>
-              </Grid>
-            </Grid>
           </Stack>
         </Grid>
       </Grid>
@@ -186,10 +211,28 @@ const NFTName = styled(Typography)(({ theme }: any) => {
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    fontSize: "0.9rem",
+    color: theme.palette.text.button,
+  };
+});
+
+const HeaderName = styled(NFTName)(({ theme }: any) => {
+  return {
     color: theme.palette.text.primary,
   };
 });
+
+const OwnedBy = styled(NFTName)`
+  cursor: pointer;
+  width: fit-content;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+const CreatorName = styled(OwnedBy)``;
+
+const Price = styled(HeaderName)``;
 
 const Body = styled(Typography)`
   max-height: 80px;
@@ -211,11 +254,13 @@ const ViewsAndLikes = styled(Typography)`
   }
 `;
 
-const CreatBy = styled.div`
-  width: 100%;
-  height: 70px;
-  background: rgba(106, 29, 76, 0.38);
-  border-radius: 12px;
-`;
+const CreatBy = styled.div(({ theme }: any) => {
+  return {
+    width: "100%",
+    height: "70px",
+    borderRadius: "12px",
+    backgroundColor: theme.palette.secondary.back,
+  };
+});
 
 export default ItemDetails;

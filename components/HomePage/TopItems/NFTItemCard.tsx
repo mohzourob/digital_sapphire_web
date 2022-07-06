@@ -10,6 +10,7 @@ import {
   MenuItem,
   MenuProps,
   Stack,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
@@ -87,9 +88,11 @@ const NFTItemCard = ({
               {t("price")}
             </Typography>
             <Grid container wrap="nowrap">
-              <Price item xs={8}>
-                {price}
-              </Price>
+              <Tooltip title={`${price}`} placement="top">
+                <Price item xs={8}>
+                  {price}
+                </Price>
+              </Tooltip>
               <Grid item xs={4}>
                 <Image
                   alt="Eth icon"
@@ -103,7 +106,7 @@ const NFTItemCard = ({
           </Stack>
         </Grid>
       </Grid>
-      <Divider sx={{ borderColor: "primary.main", margin: "0.5rem 0" }} />
+      <Divider sx={{ borderColor: "border", margin: "0.5rem 0" }} />
       <Grid
         container
         justifyContent="space-between"
@@ -140,7 +143,7 @@ const StyledDiv = styled(Stack)(({ theme }: any) => {
   return {
     margin: "1rem auto 0",
     border: "1px solid",
-    borderColor: theme.palette.secondary.main,
+    borderColor: theme.palette.border,
     borderRadius: "20px",
     padding: "0.5rem 1rem",
     width: "15rem",

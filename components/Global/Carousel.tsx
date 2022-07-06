@@ -53,38 +53,42 @@ const SyledWarper = styled.div`
   }
 `;
 
-const RightArrow = styled(IconButton)`
-  position: absolute;
-  font-size: 1rem;
-  top: calc(50% - 8px);
-  right: -1.5rem;
-  color: var(--primary-color);
-  padding: 0.1rem;
-  background-color: var(--secondary-color);
-  &:hover {
-    background-color: #9bbbd4;
-  }
+const RightArrow = styled(IconButton)(({ theme }: any) => {
+  return {
+    position: "absolute",
+    fontSize: "1rem",
+    top: "calc(50% - 8px)",
+    right: "-1.5rem",
+    padding: "0.1rem",
+    backgroundColor: theme.palette.secondary.button,
+    color: theme.palette.text.button,
+    "&:hover": {
+      backgroundColor: "#9bbbd4",
+    },
 
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
+    "@media (max-width: 600px)": {
+      display: "none",
+    },
+  };
+});
 
-const LeftArrow = styled(IconButton)`
-  position: absolute;
-  font-size: 1rem;
-  top: calc(50% - 8px);
-  left: -1.5rem;
-  color: var(--primary-color);
-  padding: 0.1rem;
-  background-color: var(--secondary-color);
-  &:hover {
-    background-color: #9bbbd4;
-  }
+const LeftArrow = styled(IconButton)(({ theme }: any) => {
+  return {
+    position: "absolute",
+    fontSize: "1rem",
+    top: "calc(50% - 8px)",
+    left: "-1.5rem",
+    padding: "0.1rem",
+    backgroundColor: theme.palette.secondary.button,
+    color: theme.palette.text.button,
+    "&:hover": {
+      backgroundColor: "#9bbbd4",
+    },
 
-  @media (max-width: 600px) {
-    display: none;
-  }
-`;
+    "@media (max-width: 600px)": {
+      display: "none",
+    },
+  };
+});
 
 export default Carousel;

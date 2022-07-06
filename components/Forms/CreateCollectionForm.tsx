@@ -19,6 +19,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import WebIcon from "@mui/icons-material/Web";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import MainButton from "../Global/MainButton";
 
 const CreateCollectionForm = () => {
   const [selectedImage, setSelectedImage] = useState<any>();
@@ -287,6 +288,7 @@ const CreateCollectionForm = () => {
           <Grid
             container
             justifyContent="flex-end"
+            alignItems="center"
             columnSpacing={2}
             marginBottom={3}
           >
@@ -303,17 +305,7 @@ const CreateCollectionForm = () => {
               </Button>
             </Grid>
             <Grid item>
-              <Button
-                variant="contained"
-                color="secondary"
-                sx={{
-                  textTransform: "none",
-                  color: "text.primary",
-                  padding: "0.5rem 1.5rem",
-                }}
-              >
-                Create
-              </Button>
+              <MainButton>Create</MainButton>
             </Grid>
           </Grid>
         </Grid>

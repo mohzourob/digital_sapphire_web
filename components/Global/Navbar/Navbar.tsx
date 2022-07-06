@@ -20,7 +20,6 @@ import MainButton from "../MainButton";
 import SearchInput from "./SearchInput";
 import ExploreMenu from "./ExploreMenuButton";
 import CreateMenu from "./CreateMenuButton";
-import NotificationsDropdown from "./NotificationsDropdown";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
@@ -88,7 +87,7 @@ const Navbar = () => {
               <IconButton
                 sx={{
                   mx: "1rem",
-                  color: "text.primary",
+                  color: "secondary.main",
                 }}
                 onClick={() => dispatch(toggleTheme())}
               >
@@ -104,7 +103,7 @@ const Navbar = () => {
             >
               <Link href="" locale={router.locale === "en" ? "ar" : "en"}>
                 <IconButton>
-                  <Typography variant="subtitle2" color="text.main">
+                  <Typography variant="subtitle2" color="secondary.main">
                     {t("changeLocale")}
                   </Typography>
                 </IconButton>

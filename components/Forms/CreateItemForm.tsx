@@ -15,6 +15,7 @@ import Image from "next/image";
 import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
 
 import ETHSVG from "../SVG/ETH";
+import MainButton from "../Global/MainButton";
 
 const CreateItemForm = () => {
   const [selectedFile, setSelectedFile] = useState<any>();
@@ -221,6 +222,7 @@ const CreateItemForm = () => {
           <Grid
             container
             justifyContent="flex-end"
+            alignItems="center"
             columnSpacing={2}
             marginBottom={3}
           >
@@ -237,17 +239,7 @@ const CreateItemForm = () => {
               </Button>
             </Grid>
             <Grid item>
-              <Button
-                variant="contained"
-                color="secondary"
-                sx={{
-                  textTransform: "none",
-                  color: "text.primary",
-                  padding: "0.5rem 1.5rem",
-                }}
-              >
-                Create
-              </Button>
+              <MainButton>Create</MainButton>
             </Grid>
           </Grid>
         </Grid>

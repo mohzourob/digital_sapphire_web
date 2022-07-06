@@ -107,8 +107,8 @@ const Profile = () => {
                   marginTop={2}
                   alignItems="center"
                 >
-                  <Grid item xs={2} textAlign="center">
-                    <Image src={ETH} />
+                  <Grid item container xs={2} alignItems="center">
+                    <Image src={ETH} width={20} height={20} />
                   </Grid>
                   <Grid item xs={10}>
                     <Address>
@@ -268,7 +268,7 @@ const ProfileIcons = styled(Grid)(({ theme }: any) => {
     margin: "auto",
     padding: "10px",
     marginTop: "2rem",
-    border: `1px solid ${theme.palette.primary.main}`,
+    border: `1px solid ${theme.palette.border}`,
     borderRadius: "10px",
   };
 });
@@ -292,7 +292,7 @@ const Icon = styled.a(({ theme }: any) => {
       left: "-50%",
       width: "1px",
       height: "200%",
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.border,
     },
   };
 });
@@ -311,7 +311,7 @@ const WalletAddress = styled(Grid)(({ theme }: any) => {
   return {
     width: "200px",
     margin: " 1rem auto",
-    border: `1px solid ${theme.palette.primary.main}`,
+    border: `1px solid ${theme.palette.border}`,
     padding: "8px",
     borderRadius: "10px",
   };

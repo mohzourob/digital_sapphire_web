@@ -168,7 +168,7 @@ const Footer = () => {
                     transform: router.locale === "en" ? null : "rotate(180deg)",
                   }}
                 >
-                  <SendIcon fontSize="small" />
+                  <SendIcon fontSize="small" sx={{ color: "white" }} />
                 </SendButton>
               </StyledPaper>
             </Stack>
@@ -183,7 +183,7 @@ const Foot = styled.footer(({ theme }: any) => {
   return {
     width: "100%",
     borderTop: "1px solid",
-    borderColor: theme.palette.divider,
+    borderColor: theme.palette.border,
     padding: "3rem 0 0 0",
   };
 });
@@ -207,6 +207,10 @@ const FooterLink = styled.a(({ theme }: any) => {
     textDecoration: "none",
     width: "fit-content",
     color: theme.palette.text.secondary,
+
+    ":hover": {
+      color: theme.palette.secondary.button,
+    },
   };
 });
 
@@ -222,7 +226,7 @@ const StyledPaper = styled(Paper)(({ theme }: any) => {
     height: "35px",
     fontSize: "0.7rem",
     backgroundColor: "transparent",
-    border: `1px solid ${theme.palette.text.primary}`,
+    border: `1px solid ${theme.palette.border}`,
     borderRadius: "8px",
     ":focus-within": {
       border: `1px solid ${theme.palette.secondary.main}`,
@@ -230,10 +234,15 @@ const StyledPaper = styled(Paper)(({ theme }: any) => {
   };
 });
 
-const SendButton = styled(IconButton)`
-  border-radius: 0px;
-  background-color: #ff7746;
-  border-radius: 0 7px 7px 0;
-`;
+const SendButton = styled(IconButton)(({ theme }: any) => {
+  return {
+    backgroundColor: theme.palette.secondary.button,
+    borderRadius: "0 7px 7px 0",
+
+    ":hover": {
+      backgroundColor: "#9bbbd4",
+    },
+  };
+});
 
 export default Footer;

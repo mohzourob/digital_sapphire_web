@@ -53,7 +53,7 @@ const ToggleGroup = styled(ToggleButtonGroup)(({ theme }: any) => {
       border: `1px solid ${theme.palette.border} !important`,
       borderRadius: "5px !important",
       "&.Mui-selected, &.Mui-selected:hover": {
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: theme.palette.secondary.button,
       },
     },
   };

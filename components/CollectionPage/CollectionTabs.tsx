@@ -10,7 +10,7 @@ import SearchInput from "../Global/Navbar/SearchInput";
 
 import NFTImage from "../../public/NFT.png";
 import styled from "@emotion/styled";
-import ActivityTab from "./ActivityTab";
+import ActivityTable from "../Global/ActivityTable";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -121,7 +121,7 @@ const CollectionTabs = () => {
           </TabPanel>
 
           <TabPanel value={value} index={1}>
-            <ActivityTab />
+            <ActivityTable />
           </TabPanel>
         </SwipeableViews>
       </Box>

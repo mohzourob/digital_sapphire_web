@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import styled from "@emotion/styled";
 import { Grid, Stack } from "@mui/material";
-import ActivityTab from "../CollectionPage/ActivityTab";
+import ActivityTable from "../Global/ActivityTable";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -115,7 +115,7 @@ const ItemDetailsDescription = () => {
         </TabPanel>
 
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <ActivityTab />
+          <ActivityTable />
         </TabPanel>
       </SwipeableViews>
     </Box>
@@ -138,10 +138,13 @@ const CustomTabs = styled(Tabs)(({ theme }: any) => {
   };
 });
 
-const Info = styled(Stack)`
-  width: 100%;
-  padding: 1rem 2rem;
-  background-color: rgba(106, 29, 76, 0.3);
-`;
+const Info = styled(Stack)(({ theme }: any) => {
+  return {
+    width: "100%",
+    padding: "1rem 0",
+    borderRadius: "12px",
+    color: theme.palette.secondary.back,
+  };
+});
 
 export default ItemDetailsDescription;

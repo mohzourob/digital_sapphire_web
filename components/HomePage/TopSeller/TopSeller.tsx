@@ -68,7 +68,7 @@ const TopSeller = () => {
           <Grid item>
             <Typography
               variant="h6"
-              color="text.primary"
+              color="text.secondButton"
               sx={{
                 marginRight: router.locale === "ar" ? "3rem" : "0rem",
                 marginLeft: router.locale === "en" ? "3rem" : "0rem",
@@ -80,7 +80,7 @@ const TopSeller = () => {
           <Grid item>
             <Link href="/explore-sellers" passHref>
               <Explore
-                color="text.primary"
+                color="text.secondButton"
                 sx={{
                   marginRight: router.locale === "en" ? "3rem" : "0rem",
                   marginLeft: router.locale === "ar" ? "3rem" : "0rem",
@@ -93,7 +93,7 @@ const TopSeller = () => {
         </Grid>
 
         <Wrapper>
-          <Grid container columnSpacing={2}>
+          <Grid container columnSpacing={2} rowSpacing={2}>
             {sellers.map((seller, index) => (
               <Grid item xs={6} sm={4} md={3} lg={2.4} key={index}>
                 <SellerCard

@@ -10,15 +10,14 @@ const SearchInput = ({ onsubmit, text, small }: any) => {
         height: small ? "35px" : "45px",
       }}
       component="form"
-      elevation={1}
       onSubmit={() => onsubmit()}
     >
       <IconButton
         type="submit"
-        sx={{ p: small ? "0px" : "5px" }}
+        sx={{ p: small ? "5px" : "10px" }}
         aria-label="search"
       >
-        <SearchIcon />
+        <SearchIcon width="1.5em" color="secondary" />
       </IconButton>
       <StyledSearchInput placeholder={text} />
     </StyledPaper>
@@ -27,17 +26,19 @@ const SearchInput = ({ onsubmit, text, small }: any) => {
 
 const StyledSearchInput = styled(InputBase)`
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
 `;
 
 const StyledPaper = styled(Paper)(({ theme }: any) => {
   return {
     display: "flex",
+    transition: "none",
+    boxShadow: "none",
     width: "100%",
     padding: "0rem 0.8rem",
     fontSize: "0.7rem",
     backgroundColor: "transparent",
-    border: `1px solid ${theme.palette.text.primary}`,
+    border: `1px solid ${theme.palette.border}`,
     ":focus-within": {
       border: `1px solid ${theme.palette.secondary.main}`,
     },

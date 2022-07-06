@@ -67,7 +67,7 @@ const StyledDiv = styled(Stack)(({ theme }: any) => {
   return {
     margin: "2rem auto",
     border: "1px solid",
-    borderColor: theme.palette.secondary.main,
+    borderColor: theme.palette.border,
     borderRadius: "20px",
     padding: "0.5rem",
     width: "16rem",
@@ -85,19 +85,21 @@ const ImageWraper = styled.div`
   }
 `;
 
-const OrgImage = styled.div`
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  bottom: -30px;
-  left: calc(50% - 35px);
-  border: 3px solid var(--primary-color);
-  border-radius: 50%;
+const OrgImage = styled.div(({ theme }: any) => {
+  return {
+    position: "absolute",
+    width: "70px",
+    height: "70px",
+    bottom: "-30px",
+    left: "calc(50% - 35px)",
+    border: `3px solid ${theme.palette.primary.nav}`,
+    borderRadius: "50%",
 
-  img {
-    border-radius: 50%;
-  }
-`;
+    img: {
+      borderRadius: "50%",
+    },
+  };
+});
 
 const OrgName = styled(Typography)(({ theme }: any) => {
   return {

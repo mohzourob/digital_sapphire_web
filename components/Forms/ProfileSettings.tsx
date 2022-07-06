@@ -10,6 +10,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import WebIcon from "@mui/icons-material/Web";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Link from "next/link";
+import MainButton from "../Global/MainButton";
 
 const ProfileSettings = () => {
   const [selectedImage, setSelectedImage] = useState<any>();
@@ -92,19 +93,7 @@ const ProfileSettings = () => {
         </Typography>
 
         <Link href={"/profile"} passHref>
-          <Button
-            variant="contained"
-            color="secondary"
-            startIcon={<RemoveRedEyeIcon />}
-            sx={{
-              textTransform: "none",
-              color: "text.primary",
-              padding: "0.5rem 3rem",
-              borderRadius: "12px",
-            }}
-          >
-            Preview
-          </Button>
+          <MainButton startIcon={<RemoveRedEyeIcon />}>Preview</MainButton>
         </Link>
       </Grid>
 
@@ -263,19 +252,7 @@ const ProfileSettings = () => {
             </form>
           </Wrapper>
 
-          <Button
-            variant="contained"
-            color="secondary"
-            sx={{
-              textTransform: "none",
-              color: "text.primary",
-              padding: "0.5rem 3rem",
-              borderRadius: "12px",
-              marginY: "2rem",
-            }}
-          >
-            Save
-          </Button>
+          <MainButton style={{ margin: "1rem 0 2rem" }}>Save</MainButton>
         </Grid>
       </Grid>
     </Container>

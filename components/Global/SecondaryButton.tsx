@@ -5,12 +5,12 @@ const SecondaryButton = (props: any) => {
     <MuiButton
       sx={{
         bgcolor: "transparent",
-        color: "text.button",
+        color: "text.secondButton",
         textTransform: "none",
         fontSize: `${props.size === "small" ? "0.78rem" : "0.8rem"}`,
         padding: `${props.size === "small" ? "0.6rem" : "0.6rem 3.5rem"}`,
         border: "1px solid",
-        borderColor: "primary.main",
+        borderColor: "border",
         borderRadius: "8px",
         ":hover": {
           bgcolor: "transparent",

@@ -154,7 +154,7 @@ const StyledDiv = styled(Stack)(({ theme }: any) => {
   return {
     margin: "2rem auto",
     border: "1px solid",
-    borderColor: theme.palette.secondary.main,
+    borderColor: theme.palette.border,
     borderRadius: "20px",
     padding: "0.5rem 1rem",
     width: "22rem",

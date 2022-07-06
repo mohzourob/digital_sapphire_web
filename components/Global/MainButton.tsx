@@ -4,14 +4,14 @@ const MainButton = (props: any) => {
   return (
     <MuiButton
       sx={{
-        bgcolor: "secondary.main",
+        bgcolor: "secondary.button",
         color: "text.button",
         textTransform: "none",
         fontSize: "0.8rem",
         fontWeight: "500",
         padding: "0.6rem 3rem",
         border: "1px solid",
-        borderColor: "secondary.main",
+        borderColor: "secondary.button",
         borderRadius: "8px",
         ":hover": {
           bgcolor: "transparent",
