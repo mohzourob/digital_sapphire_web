@@ -8,6 +8,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Divider,
 } from "@mui/material";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -63,11 +64,15 @@ const MobileDrawer = () => {
           </ListItemButton>
         </ListItem>
 
+        <Divider />
+
         <ListItem disablePadding onClick={toggleDrawer}>
           <ListItemButton>
             <ListItemText primary={"Explore Collection"} />
           </ListItemButton>
         </ListItem>
+
+        <Divider />
 
         <ListItem disablePadding onClick={toggleDrawer}>
           <ListItemButton>
@@ -75,11 +80,15 @@ const MobileDrawer = () => {
           </ListItemButton>
         </ListItem>
 
+        <Divider />
+
         <ListItem disablePadding onClick={toggleDrawer}>
           <ListItemButton>
             <ListItemText primary={"Create Collection"} />
           </ListItemButton>
         </ListItem>
+
+        <Divider />
 
         <ListItem disablePadding onClick={() => dispatch(toggleTheme())}>
           <ListItemButton>
@@ -91,6 +100,8 @@ const MobileDrawer = () => {
             <ListItemText primary={"Toggle Theme"} />
           </ListItemButton>
         </ListItem>
+
+        <Divider />
 
         <ListItem disablePadding>
           <Link href="" locale={router.locale === "en" ? "ar" : "en"}>
