@@ -22,15 +22,6 @@ import ETH from "../../../public/ETH.svg";
 import MainButton from "../../Global/Common/MainButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-type NFTItemProps = {
-  name?: string;
-  creator?: string;
-  price?: number;
-  image?: StaticImageData;
-  likedNumber?: number;
-  owner?: boolean;
-};
-
 const NFTItemCard = ({
   name,
   creator,
@@ -38,7 +29,7 @@ const NFTItemCard = ({
   image,
   likedNumber,
   owner,
-}: NFTItemProps) => {
+}: any) => {
   const router = useRouter();
   const { t } = useTranslation("homePage");
 

@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 import Layout from "../components/HOC/Layout";
 import About from "../components/HomePage/About/About";
@@ -13,6 +14,9 @@ import YouTubeVideo from "../components/HomePage/YouTubeVideo";
 const Home: NextPage = () => {
   return (
     <Layout>
+      <Head>
+        <title>Digital Sapphire</title>
+      </Head>
       <Hero />
       <TopItemsCarousel />
       <TopCollectionsCarousel />

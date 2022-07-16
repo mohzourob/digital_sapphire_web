@@ -15,6 +15,7 @@ const Logo = () => {
           width={45}
           height={45}
           loading="lazy"
+          style={{ borderRadius: "50%" }}
         />
       </StyledLogo>
     </Link>

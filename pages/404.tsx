@@ -2,12 +2,16 @@ import styled from "@emotion/styled";
 import { Button, Stack, Typography } from "@mui/material";
 import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 import Image from "next/image";
 
 import Layout from "../components/HOC/Layout";
 const Custom404: NextPage = () => {
   return (
     <Layout noFooter>
+      <Head>
+        <title>404 Error</title>
+      </Head>
       <Stack justifyContent="center" alignItems="center" marginY="4rem">
         <ImageWrapper>
           <Image src={"/404.png"} layout="fill" />
