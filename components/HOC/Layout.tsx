@@ -9,7 +9,7 @@ import { useEffect, useMemo } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../../features/themeSlice";
 import Footer from "../Global/Footer/Footer";
-import ModalComponent from "../Global/ModalComponent";
+import ModalComponent from "../Global/Common/ModalComponent";
 import Navbar from "../Global/Navbar/Navbar";
 
 const Layout = ({ children, noNav, noFooter }: any) => {
@@ -75,6 +75,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
             success: "#92D28F",
             fail: "#EC5757",
           },
+          badge: "red",
         }
       : {
           // palette values for dark mode
@@ -101,6 +102,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
             success: "#92D28F",
             fail: "#EC5757",
           },
+          badge: "#83b1d4",
         }),
   },
   typography: {

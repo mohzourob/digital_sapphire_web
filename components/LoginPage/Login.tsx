@@ -38,7 +38,10 @@ const Login = () => {
 
   const walletLogin = async () => {
     if (!isAuthenticated) {
-      await authenticate({ provider: "walletconnect" })
+      await authenticate({
+        provider: "walletconnect",
+        signingMessage: "Log in to Digital Sapphire",
+      })
         .then(function (user) {
           console.log(user!.get("ethAddress"));
         })

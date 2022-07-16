@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Button, Modal, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import { closeModal } from "../../features/modalSlice";
+import { closeModal } from "../../../features/modalSlice";
 
 const ModalComponent = () => {
   const dispatch = useDispatch();

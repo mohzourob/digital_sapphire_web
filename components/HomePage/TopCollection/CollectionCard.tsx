@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Grid, Link, Stack, Typography } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
 
-import SecondaryButton from "../../Global/SecondaryButton";
+import SecondaryButton from "../../Global/Common/SecondaryButton";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 

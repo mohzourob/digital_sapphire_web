@@ -13,7 +13,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import NFTImage from "../../public/NFT.png";
 import ItemDetailsDescription from "./ItemDetailsDescription";
-import MainButton from "../Global/MainButton";
+import MainButton from "../Global/Common/MainButton";
 import ETH from "../../public/ETH.svg";
 import { Create } from "@mui/icons-material";
 import Link from "next/link";

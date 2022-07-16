@@ -19,7 +19,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import WebIcon from "@mui/icons-material/Web";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import MainButton from "../Global/MainButton";
+import MainButton from "../Global/Common/MainButton";
 
 const CreateCollectionForm = () => {
   const [selectedImage, setSelectedImage] = useState<any>();

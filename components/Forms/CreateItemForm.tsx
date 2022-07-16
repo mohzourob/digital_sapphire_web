@@ -15,7 +15,7 @@ import Image from "next/image";
 import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
 
 import ETHSVG from "../SVG/ETH";
-import MainButton from "../Global/MainButton";
+import MainButton from "../Global/Common/MainButton";
 
 const CreateItemForm = () => {
   const [selectedFile, setSelectedFile] = useState<any>();

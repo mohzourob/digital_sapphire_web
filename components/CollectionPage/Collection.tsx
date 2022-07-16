@@ -7,7 +7,7 @@ import { DiscordSVG, FacebookSVG, TwitterSVG, InstagramSVG } from "../SVG";
 import cover from "../../public/cover.png";
 
 import CollectionInfo from "./CollectionInfo";
-import SecondaryButton from "../Global/SecondaryButton";
+import SecondaryButton from "../Global/Common/SecondaryButton";
 import CollectionTabs from "./CollectionTabs";
 
 const Collection = () => {

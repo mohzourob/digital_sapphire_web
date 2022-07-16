@@ -19,7 +19,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 import profilePic from "../../../public/profile-pic.png";
 import ETH from "../../../public/ETH.svg";
-import MainButton from "../../Global/MainButton";
+import MainButton from "../../Global/Common/MainButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 type NFTItemProps = {

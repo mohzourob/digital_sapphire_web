@@ -19,7 +19,7 @@ import CreatedButton from "./CreatedButton";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import SearchInput from "../Global/Navbar/SearchInput";
-import ItemsFilter from "../Global/ItemsFilter";
+import ItemsFilter from "../Global/Common/ItemsFilter";
 import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
 import NFTImage from "../../public/NFT.png";
 

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import CollectionCard from "./CollectionCard";
-import Carousel from "../../Global/Carousel";
+import Carousel from "../../Global/Common/Carousel";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";

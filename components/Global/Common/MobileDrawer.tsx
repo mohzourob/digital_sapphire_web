@@ -19,7 +19,7 @@ import MainButton from "./MainButton";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
-import { toggleTheme } from "../../features/themeSlice";
+import { toggleTheme } from "../../../features/themeSlice";
 import Link from "next/link";
 
 const MobileDrawer = () => {

@@ -4,13 +4,13 @@ import SwipeableViews from "react-swipeable-views";
 
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import TimelineIcon from "@mui/icons-material/Timeline";
-import ItemsFilter from "../Global/ItemsFilter";
+import ItemsFilter from "../Global/Common/ItemsFilter";
 import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
 import SearchInput from "../Global/Navbar/SearchInput";
 
 import NFTImage from "../../public/NFT.png";
 import styled from "@emotion/styled";
-import ActivityTable from "../Global/ActivityTable";
+import ActivityTable from "../Global/Common/ActivityTable";
 
 interface TabPanelProps {
   children?: React.ReactNode;

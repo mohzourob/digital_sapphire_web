@@ -9,7 +9,7 @@ import {
 import styled from "@emotion/styled";
 
 import NFTItemCard from "./NFTItemCard";
-import Carousel from "../../Global/Carousel";
+import Carousel from "../../Global/Common/Carousel";
 
 import NFTImage from "../../../public/NFT.png";
 import { useRouter } from "next/router";

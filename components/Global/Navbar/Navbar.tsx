@@ -11,12 +11,13 @@ import {
   Toolbar,
   Container,
   Typography,
+  Badge,
 } from "@mui/material";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 
 import { toggleTheme } from "../../../features/themeSlice";
 import Logo from "./Logo";
-import MainButton from "../MainButton";
+import MainButton from "../Common/MainButton";
 import SearchInput from "./SearchInput";
 import ExploreMenu from "./ExploreMenuButton";
 import CreateMenu from "./CreateMenuButton";
@@ -24,20 +25,17 @@ import CreateMenu from "./CreateMenuButton";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import MobileDrawer from "../MobileDrawer";
+import MobileDrawer from "../Common/MobileDrawer";
+import NotificationsPopup from "./NotificationsPopup";
+import ProfileOptions from "./ProfileOptions";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const { isAuthenticated, logout } = useMoralis();
+  const { isAuthenticated } = useMoralis();
   const { t } = useTranslation("homePage");
 
   const theme = useSelector((state: RootStateOrAny) => state.theme.theme);
-
-  const logOut = async () => {
-    await logout();
-    console.log("logged out");
-  };
 
   return (
     <CustomAppBar position="sticky" enableColorOnDark>
@@ -51,7 +49,7 @@ const Navbar = () => {
             <Grid item xs={2} md={0.5} lg={0.5}>
               <Logo />
             </Grid>
-            <Grid item xs={8} md={4.5} justifyContent="center">
+            <Grid item xs={7} md={4.5} justifyContent="center">
               <SearchInput text={t("search")} />
             </Grid>
             <Grid
@@ -70,14 +68,9 @@ const Navbar = () => {
             >
               <CreateMenu />
             </Grid>
-            {/* <Grid
-              sx={{ display: { xs: "none", md: "flex" } }}
-              item
-              md={0.5}
-              justifyContent="center"
-            >
-              <NotificationsDropdown />
-            </Grid> */}
+            <Grid container item xs={2} md={0.5} justifyContent="center">
+              <NotificationsPopup />
+            </Grid>
             <Grid
               sx={{ display: { xs: "none", md: "flex" } }}
               item
@@ -116,7 +109,7 @@ const Navbar = () => {
                   item
                   sx={{ display: { xs: "none", md: "flex" } }}
                   md={3}
-                  lg={2.5}
+                  lg={2}
                   justifyContent="flex-end"
                 >
                   <MainButton
@@ -141,21 +134,11 @@ const Navbar = () => {
               <Grid
                 item
                 sx={{ display: { xs: "none", md: "flex" } }}
-                md={3}
-                lg={2.5}
+                md={isAuthenticated ? 0.5 : 3}
+                lg={isAuthenticated ? 0.5 : 2}
                 justifyContent="flex-end"
               >
-                <MainButton
-                  onClick={logOut}
-                  startIcon={
-                    router.locale === "en" ? <AccountBalanceWalletIcon /> : null
-                  }
-                  endIcon={
-                    router.locale === "ar" ? <AccountBalanceWalletIcon /> : null
-                  }
-                >
-                  Logout
-                </MainButton>
+                <ProfileOptions />
               </Grid>
             )}
 
@@ -183,5 +166,14 @@ const CustomAppBar = styled(AppBar)(({ theme }: any) => {
     transition: " background 0.6s ease",
   };
 });
+
+const StyledBadge = styled(Badge)(({ theme }: any) => ({
+  "& .MuiBadge-badge": {
+    right: 5,
+    top: 5,
+    padding: "4px",
+    backgroundColor: theme.palette.badge,
+  },
+}));
 
 export default Navbar;

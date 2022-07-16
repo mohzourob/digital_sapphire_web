@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import styled from "@emotion/styled";
 import { Grid, Stack } from "@mui/material";
-import ActivityTable from "../Global/ActivityTable";
+import ActivityTable from "../Global/Common/ActivityTable";
 
 interface TabPanelProps {
   children?: React.ReactNode;

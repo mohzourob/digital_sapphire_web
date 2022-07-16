@@ -4,8 +4,8 @@ import { Grid, Container, Typography, Stack } from "@mui/material";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 
-import MainButton from "../../Global/MainButton";
-import SecondaryButton from "../../Global/SecondaryButton";
+import MainButton from "../../Global/Common/MainButton";
+import SecondaryButton from "../../Global/Common/SecondaryButton";
 
 import monlizaImage from "../../../public/monlizaImage.png";
 

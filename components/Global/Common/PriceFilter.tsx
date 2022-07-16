@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 
 import MainButton from "./MainButton";
-import ETH from "../../public/ETH.svg";
+import ETH from "../../../public/ETH.svg";
 import Image from "next/image";
 
 interface State {

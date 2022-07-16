@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { Container, Grid, Typography } from "@mui/material";
 import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
-import PriceFilter from "../Global/PriceFilter";
-import SortByPrice from "../Global/SortByPrice";
+import PriceFilter from "../Global/Common/PriceFilter";
+import SortByPrice from "../Global/Common/SortByPrice";
 
 import NFTImage from "../../public/NFT.png";
 import ExploreFilter from "./ExploreFilter";

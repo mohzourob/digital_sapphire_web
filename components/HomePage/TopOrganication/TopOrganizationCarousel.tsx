@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import styled from "@emotion/styled";
 import OrganizationCard from "./OrganizationCard";
-import Carousel from "../../Global/Carousel";
+import Carousel from "../../Global/Common/Carousel";
 
 import NFTImage from "../../../public/NFT.png";
 import banner from "../../../public/banner.png";

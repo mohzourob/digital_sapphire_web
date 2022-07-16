@@ -6,7 +6,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import styled from "@emotion/styled";
-import ClientOnly from "../HOC/ClientOnly";
+import ClientOnly from "../../HOC/ClientOnly";
 
 const Carousel = ({ items, responsive }: any) => {
   const [activeIndex, setActiveIndex] = useState(0);

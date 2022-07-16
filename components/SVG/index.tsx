@@ -6,3 +6,5 @@ export { default as ShareSVG } from "./ShareSVG";
 export { default as TwitterSVG } from "./TwitterSVG";
 export { default as CreatedSVG } from "./CreatedSVG";
 export { default as ActivitySVG } from "./ActivitySVG";
+export { default as WatchListSVG } from "./WatchListSVG";
+export { default as LogoutSVG } from "./LogoutSVG";
