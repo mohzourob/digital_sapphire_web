@@ -94,7 +94,11 @@ const Navbar = () => {
               md={0.5}
               justifyContent="center"
             >
-              <Link href="" locale={router.locale === "en" ? "ar" : "en"}>
+              <Link
+                href=""
+                locale={router.locale === "en" ? "ar" : "en"}
+                passHref
+              >
                 <IconButton>
                   <Typography variant="subtitle2" color="secondary.main">
                     {t("changeLocale")}

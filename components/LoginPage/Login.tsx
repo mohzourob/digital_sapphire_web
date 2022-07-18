@@ -71,6 +71,7 @@ const Login = () => {
               width={24}
               height={24}
               layout="fixed"
+              alt="metamask icon"
             />
           }
         >
@@ -85,6 +86,7 @@ const Login = () => {
               width={24}
               height={24}
               layout="fixed"
+              alt="walletconnect icon"
             />
           }
         >

@@ -36,9 +36,8 @@ const ExploreItem = () => {
 
         <Grid container wrap="wrap" justifyContent="center" spacing={3}>
           {[...Array(10)].map((x, i) => (
-            <Grid item>
+            <Grid item key={i}>
               <NFTItemCard
-                key={i}
                 name="Hamlet Contemplates Yorick's"
                 creator="Sami"
                 price={23}

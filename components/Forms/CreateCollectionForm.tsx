@@ -18,7 +18,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import WebIcon from "@mui/icons-material/Web";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+
 import MainButton from "../Global/Common/MainButton";
 
 const CreateCollectionForm = () => {
@@ -194,7 +194,7 @@ const CreateCollectionForm = () => {
                 color="text.primary"
                 marginBottom={1}
               >
-                The description will be included on the item's detail page
+                The description will be included on the item&apos;s detail page
                 underneath its image. Markdown syntax is supported.
               </Typography>
 

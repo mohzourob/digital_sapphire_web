@@ -25,10 +25,15 @@ const OrganizationCard = ({
       <Grid container justifyContent="space-between">
         <Grid item xs={12} position="relative" marginBottom="2rem">
           <ImageWraper>
-            <Image src={bannerImage} height={100} />
+            <Image src={bannerImage} height={100} alt="Banner Image" />
           </ImageWraper>
           <OrgImage>
-            <Image src={image} layout="fill" objectFit="cover" />
+            <Image
+              src={image}
+              layout="fill"
+              objectFit="cover"
+              alt="OrganizationImage"
+            />
           </OrgImage>
         </Grid>
 

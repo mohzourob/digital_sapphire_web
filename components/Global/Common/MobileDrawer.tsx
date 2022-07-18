@@ -219,7 +219,7 @@ const MobileDrawer = () => {
         <Divider />
 
         <ListItem disablePadding>
-          <Link href="" locale={router.locale === "en" ? "ar" : "en"}>
+          <Link href="" locale={router.locale === "en" ? "ar" : "en"} passHref>
             <ListItemButton>
               <ListItemText primary={t("changeLocale")} />
             </ListItemButton>

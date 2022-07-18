@@ -15,7 +15,7 @@ const Custom500: NextPage = () => {
       </Head>
       <Stack justifyContent="center" alignItems="center" marginY="4rem">
         <ImageWrapper>
-          <Image src={"/500.png"} layout="fill" />
+          <Image src={"/500.png"} layout="fill" alt="500 Error" />
         </ImageWrapper>
 
         <Typography
@@ -28,7 +28,7 @@ const Custom500: NextPage = () => {
         </Typography>
 
         <Typography variant="body2" color="text.secondary" marginY="1rem">
-          There's a server error please try again
+          There&apos;s a server error please try again
         </Typography>
 
         <Button

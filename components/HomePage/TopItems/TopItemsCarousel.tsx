@@ -24,6 +24,7 @@ const responsive = {
 
 const items = [
   <NFTItemCard
+    key="1"
     name="Hamlet Contemplates Yorick's"
     creator="Sami"
     price={23}
@@ -31,6 +32,7 @@ const items = [
     likedNumber={100}
   />,
   <NFTItemCard
+    key="2"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     price={23.3}
@@ -38,6 +40,7 @@ const items = [
     likedNumber={200}
   />,
   <NFTItemCard
+    key="3"
     name="Hamlet Contemplates Yorick's"
     creator="Samisswwwwwwwwwwwwwssdasdasdsads"
     price={100}
@@ -45,6 +48,7 @@ const items = [
     likedNumber={300}
   />,
   <NFTItemCard
+    key="4"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     price={1000.8888888}
@@ -52,6 +56,7 @@ const items = [
     likedNumber={400}
   />,
   <NFTItemCard
+    key="5"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     price={22}
@@ -59,6 +64,7 @@ const items = [
     likedNumber={500}
   />,
   <NFTItemCard
+    key="6"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     price={22}
@@ -66,6 +72,7 @@ const items = [
     likedNumber={500}
   />,
   <NFTItemCard
+    key="7"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     price={22}

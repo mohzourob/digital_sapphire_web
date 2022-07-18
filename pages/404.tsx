@@ -14,7 +14,7 @@ const Custom404: NextPage = () => {
       </Head>
       <Stack justifyContent="center" alignItems="center" marginY="4rem">
         <ImageWrapper>
-          <Image src={"/404.png"} layout="fill" />
+          <Image src={"/404.png"} layout="fill" alt="404 Error" />
         </ImageWrapper>
 
         <Typography

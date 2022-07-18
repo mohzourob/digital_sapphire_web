@@ -16,6 +16,9 @@ import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
 
 import ETHSVG from "../SVG/ETH";
 import MainButton from "../Global/Common/MainButton";
+import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
+
+import ABI from "../../api.json";
 
 const CreateItemForm = () => {
   const [selectedFile, setSelectedFile] = useState<any>();
@@ -23,6 +26,8 @@ const CreateItemForm = () => {
   const [price, setPrice] = useState<any>();
   const [name, setName] = useState("");
   const [collectionName, setCollectionName] = useState("");
+  const { Moralis } = useMoralis();
+  const contractProcessor = useWeb3ExecuteFunction();
 
   const handelNameChange = (e: { target: { value: string } }) => {
     setName(e.target.value);
@@ -63,6 +68,31 @@ const CreateItemForm = () => {
   const onRemoveFile = (e: any) => {
     e.preventDefault();
     setSelectedFile(undefined);
+  };
+
+  // intract with smart contract
+  const createItem = async (tokenURI: any) => {
+    await Moralis.enableWeb3();
+
+    let option = {
+      contractAddress: "0x00bC9639C1D1eE949920389aA75aFEc41C904a55",
+      functionName: "createItem(string)",
+      abi: JSON.parse(ABI.result),
+      params: {
+        tokenURI: tokenURI,
+      },
+      msgValue: "",
+    };
+
+    await contractProcessor.fetch({
+      params: option,
+      onSuccess(results) {
+        console.log(results);
+      },
+      onError(error) {
+        console.error(error);
+      },
+    });
   };
 
   return (
@@ -133,7 +163,7 @@ const CreateItemForm = () => {
                 color="text.primary"
                 marginBottom={1}
               >
-                The description will be included on the item's detail page
+                The description will be included on the item&apos;s detail page
                 underneath its image. Markdown syntax is supported.
               </Typography>
 
@@ -239,7 +269,9 @@ const CreateItemForm = () => {
               </Button>
             </Grid>
             <Grid item>
-              <MainButton>Create</MainButton>
+              <MainButton onClick={() => createItem("test first token")}>
+                Create
+              </MainButton>
             </Grid>
           </Grid>
         </Grid>

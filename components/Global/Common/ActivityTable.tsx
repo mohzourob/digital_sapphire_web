@@ -102,7 +102,8 @@ const columns: GridColDef[] = [
     renderCell: (paramas) => {
       return (
         <Price>
-          {paramas.row.price} <Image src="/ETH.svg" width={16} height={16} />
+          {paramas.row.price}{" "}
+          <Image src="/ETH.svg" width={16} height={16} alt="ETH icon" />
         </Price>
       );
     },

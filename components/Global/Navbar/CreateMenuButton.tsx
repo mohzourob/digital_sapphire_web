@@ -6,6 +6,7 @@ import Divider from "@mui/material/Divider";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 const CreateMenuButton = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -31,13 +32,17 @@ const CreateMenuButton = () => {
         {t("create")}
       </Button>
       <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem onClick={handleClose} disableRipple>
-          {t("items")}
-        </MenuItem>
+        <Link href="/create-item" passHref>
+          <MenuItem onClick={handleClose} disableRipple>
+            {t("items")}
+          </MenuItem>
+        </Link>
         <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={handleClose} disableRipple>
-          {t("collections")}
-        </MenuItem>
+        <Link href="/create-collection" passHref>
+          <MenuItem onClick={handleClose} disableRipple>
+            {t("collections")}
+          </MenuItem>
+        </Link>
       </StyledMenu>
     </div>
   );

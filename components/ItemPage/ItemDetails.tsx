@@ -24,7 +24,12 @@ const ItemDetails = () => {
       <Grid container marginY={4} columnSpacing={3}>
         <Grid item xs={12} sm={4}>
           <ImageWraper>
-            <Image src={NFTImage} layout="responsive" priority />
+            <Image
+              src={NFTImage}
+              layout="responsive"
+              priority
+              alt="NFT Image"
+            />
           </ImageWraper>
         </Grid>
 
@@ -133,7 +138,7 @@ const ItemDetails = () => {
                         >
                           Owned By
                         </Typography>
-                        <Link href={"#"}>
+                        <Link href={"#"} passHref>
                           <OwnedBy variant="body1">Ralph Garraway</OwnedBy>
                         </Link>
                       </Stack>

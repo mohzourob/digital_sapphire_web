@@ -27,6 +27,7 @@ const ModalComponent = () => {
             width={380}
             height={280}
             layout="intrinsic"
+            alt="Success Image"
           />
         ) : modalType === "fail" ? (
           <Image
@@ -34,6 +35,7 @@ const ModalComponent = () => {
             width={380}
             height={280}
             layout="intrinsic"
+            alt="Fail Image"
           />
         ) : null}
 

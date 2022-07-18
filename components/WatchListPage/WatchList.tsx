@@ -72,7 +72,7 @@ const columns: GridColDef[] = [
       return (
         <Price>
           {paramas.row.floorPrice}{" "}
-          <Image src="/ETH.svg" width={16} height={16} />
+          <Image src="/ETH.svg" width={16} height={16} alt="ETH icon" />
         </Price>
       );
     },
@@ -86,7 +86,7 @@ const columns: GridColDef[] = [
       return (
         <Price>
           {paramas.row.sevenDayVolume}{" "}
-          <Image src="/ETH.svg" width={16} height={16} />
+          <Image src="/ETH.svg" width={16} height={16} alt="ETH icon" />
         </Price>
       );
     },

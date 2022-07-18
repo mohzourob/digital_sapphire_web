@@ -23,7 +23,7 @@ const Layout = ({ children, noNav, noFooter }: any) => {
     ) {
       dispatch(setTheme(localStorage.getItem("theme")));
     }
-  }, []);
+  }, [dispatch]);
 
   const mode = useSelector((state: RootStateOrAny) => state.theme.theme);
 

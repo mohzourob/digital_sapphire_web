@@ -22,6 +22,7 @@ const responsive = {
 
 const items = [
   <CollectionCard
+    key="1"
     name="Hamlet Contemplates Yorick's"
     creator="Sami"
     itemsNumber={23}
@@ -29,24 +30,28 @@ const items = [
     verified
   />,
   <CollectionCard
+    key="2"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     itemsNumber={23.3}
     image={NFTImage}
   />,
   <CollectionCard
+    key="3"
     name="Hamlet Contemplates Yorick's"
     creator="Samisswwwwwwwwwwwwwssdasdasdsads"
     itemsNumber={100}
     image={NFTImage}
   />,
   <CollectionCard
+    key="4"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     itemsNumber={1000.8888888}
     image={NFTImage}
   />,
   <CollectionCard
+    key="5"
     name="Hamlet Contemplates Yorick's"
     creator="Samiss"
     itemsNumber={22}

@@ -23,6 +23,7 @@ const responsive = {
 
 const items = [
   <OrganizationCard
+    key="1"
     name="Sami"
     image={NFTImage}
     bannerImage={banner}
@@ -32,6 +33,7 @@ const items = [
   sit aliqua est sit aliqua."
   />,
   <OrganizationCard
+    key="2"
     name="Sami"
     image={NFTImage}
     bannerImage={banner}
@@ -41,6 +43,7 @@ const items = [
   sit aliqua est sit aliqua."
   />,
   <OrganizationCard
+    key="3"
     name="Sami"
     image={NFTImage}
     bannerImage={banner}
@@ -50,6 +53,7 @@ const items = [
   sit aliqua est sit aliqua."
   />,
   <OrganizationCard
+    key="4"
     name="Sami sabbah"
     image={NFTImage}
     bannerImage={banner}
@@ -59,6 +63,7 @@ const items = [
   sit aliqua est sit aliqua."
   />,
   <OrganizationCard
+    key="5"
     name="Samisdsadasasdasdasdasdasdd"
     image={NFTImage}
     bannerImage={banner}

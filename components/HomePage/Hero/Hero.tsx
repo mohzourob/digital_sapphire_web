@@ -42,7 +42,7 @@ const Hero = () => {
                   </MainButton>
                 </span>
               </Link>
-              <Link href="/create-new-item" passHref>
+              <Link href="/create-item" passHref>
                 <span>
                   <SecondaryButton>{t("create")}</SecondaryButton>
                 </span>

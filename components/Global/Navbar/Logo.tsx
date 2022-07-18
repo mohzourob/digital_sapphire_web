@@ -6,14 +6,14 @@ import logo from "../../../public/logo.png";
 
 const Logo = () => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} passHref>
       <StyledLogo>
         <Image
           alt="Logo"
           src={logo}
           layout="fixed"
-          width={45}
-          height={45}
+          width={55}
+          height={55}
           loading="lazy"
           style={{ borderRadius: "50%" }}
         />
@@ -23,10 +23,9 @@ const Logo = () => {
 };
 
 const StyledLogo = styled.div`
-  background-color: var(--secondary-color);
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 55px;
+  height: 55px;
   position: relative;
   cursor: pointer;
 `;

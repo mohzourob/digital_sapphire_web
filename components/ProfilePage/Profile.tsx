@@ -108,7 +108,7 @@ const Profile = () => {
                   alignItems="center"
                 >
                   <Grid item container xs={2} alignItems="center">
-                    <Image src={ETH} width={20} height={20} />
+                    <Image src={ETH} width={20} height={20} alt="ETH icon" />
                   </Grid>
                   <Grid item xs={10}>
                     <Address>
