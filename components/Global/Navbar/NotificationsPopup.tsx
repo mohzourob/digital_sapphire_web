@@ -3,13 +3,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useState } from "react";
-import {
-  Badge,
-  ClickAwayListener,
-  Grid,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Badge, ClickAwayListener, Stack, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 

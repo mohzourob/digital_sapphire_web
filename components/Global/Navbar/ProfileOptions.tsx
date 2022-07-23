@@ -5,7 +5,6 @@ import Divider from "@mui/material/Divider";
 import { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { Avatar, ListItemIcon } from "@mui/material";
-import { useMoralis } from "react-moralis";
 
 import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -16,7 +15,7 @@ import Link from "next/link";
 
 const ProfileOptions = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const { logout } = useMoralis();
+  const logout = () => {};
   const open = Boolean(anchorEl);
   const { t } = useTranslation("homePage");
 

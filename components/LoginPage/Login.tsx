@@ -1,9 +1,6 @@
-import { useEffect } from "react";
 import styled from "@emotion/styled";
 import { Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
-import Router from "next/router";
-import { useMoralis } from "react-moralis";
 
 declare global {
   interface Window {
@@ -12,49 +9,13 @@ declare global {
 }
 
 const Login = () => {
-  const { authenticate, isAuthenticated } = useMoralis();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      Router.push("/");
-    }
-  }, [isAuthenticated]);
-
-  const metaMaskLogin = async () => {
-    if (!window.ethereum) {
-      window.open("https://metamask.io/download/");
-    }
-    if (!isAuthenticated) {
-      await authenticate({ signingMessage: "Log in to Digital Sapphire" })
-        .then(function (user) {
-          console.log("logged in user:", user);
-          console.log(user!.get("ethAddress"));
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  };
-
-  const walletLogin = async () => {
-    if (!isAuthenticated) {
-      await authenticate({
-        provider: "walletconnect",
-        signingMessage: "Log in to Digital Sapphire",
-      })
-        .then(function (user) {
-          console.log(user!.get("ethAddress"));
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  };
+  const metamaskConnect = () => {};
+  const walletConnect = () => {};
 
   return (
     <Container maxWidth="sm" sx={{ minHeight: "80vh" }}>
       <Typography variant="h4" color="text.primary" marginTop="4rem">
-        Connect your wallet. {isAuthenticated ? "true" : "false"}
+        Connect your wallet.
       </Typography>
 
       <Typography variant="h6" fontSize={12} color="text.primary" marginY={2}>
@@ -63,7 +24,7 @@ const Login = () => {
 
       <Wallets>
         <Wallet
-          onClick={metaMaskLogin}
+          onClick={metamaskConnect}
           variant="text"
           startIcon={
             <Image
@@ -79,7 +40,7 @@ const Login = () => {
         </Wallet>
         <Wallet
           variant="text"
-          onClick={walletLogin}
+          onClick={walletConnect}
           startIcon={
             <Image
               src={"/walletconnect.webp"}

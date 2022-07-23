@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { useMoralis } from "react-moralis";
 import Link from "next/link";
 import styled from "@emotion/styled";
 import {
@@ -32,7 +30,7 @@ import ProfileOptions from "./ProfileOptions";
 const Navbar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const { isAuthenticated } = useMoralis();
+  const isAuthenticated = false;
   const { t } = useTranslation("homePage");
 
   const theme = useSelector((state: RootStateOrAny) => state.theme.theme);
@@ -46,7 +44,7 @@ const Navbar = () => {
           dir={router.locale === "en" ? "ltr" : "rtl"}
         >
           <Grid container alignItems="center" justifyContent="space-between">
-            <Grid item xs={2} md={0.5} lg={0.5}>
+            <Grid item xs={2} md={0.7} lg={0.5}>
               <Logo />
             </Grid>
             <Grid item xs={7} md={4.5} justifyContent="center">
@@ -95,7 +93,7 @@ const Navbar = () => {
               justifyContent="center"
             >
               <Link
-                href=""
+                href="#"
                 locale={router.locale === "en" ? "ar" : "en"}
                 passHref
               >

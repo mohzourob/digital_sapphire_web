@@ -15,7 +15,6 @@ import { useRouter } from "next/router";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../../features/themeSlice";
 import Link from "next/link";
-import { useMoralis } from "react-moralis";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
@@ -34,11 +33,10 @@ import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useState } from "react";
 const MobileDrawer = () => {
   const dispatch = useDispatch();
-  const { isAuthenticated, logout } = useMoralis();
   const theme = useSelector((state: RootStateOrAny) => state.theme.theme);
   const { t } = useTranslation("homePage");
   const router = useRouter();
-
+  const isAuthenticated = false;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -51,9 +49,7 @@ const MobileDrawer = () => {
     setNestedProfileOpen(!nestedProfileOpen);
   };
 
-  const logOut = async () => {
-    await logout();
-  };
+  const logout = () => {};
 
   const list = () => (
     <Box
@@ -154,7 +150,7 @@ const MobileDrawer = () => {
         )}
 
         <Link href="/explore-item" passHref>
-          <ListItem disablePadding onClick={toggleDrawer}>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={"Explore Item"} />
             </ListItemButton>
@@ -163,7 +159,7 @@ const MobileDrawer = () => {
 
         <Divider />
         <Link href="/explore-collection" passHref>
-          <ListItem disablePadding onClick={toggleDrawer}>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={"Explore Collection"} />
             </ListItemButton>
@@ -173,7 +169,7 @@ const MobileDrawer = () => {
         <Divider />
 
         <Link href="/create-item" passHref>
-          <ListItem disablePadding onClick={toggleDrawer}>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={"Create Item"} />
             </ListItemButton>
@@ -183,7 +179,7 @@ const MobileDrawer = () => {
         <Divider />
 
         <Link href="/create-collection" passHref>
-          <ListItem disablePadding onClick={toggleDrawer}>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={"Create Collection"} />
             </ListItemButton>
@@ -218,13 +214,13 @@ const MobileDrawer = () => {
 
         <Divider />
 
-        <ListItem disablePadding>
-          <Link href="" locale={router.locale === "en" ? "ar" : "en"} passHref>
+        <Link href="" locale={router.locale === "en" ? "ar" : "en"} passHref>
+          <ListItem disablePadding>
             <ListItemButton>
               <ListItemText primary={t("changeLocale")} />
             </ListItemButton>
-          </Link>
-        </ListItem>
+          </ListItem>
+        </Link>
       </List>
     </Box>
   );

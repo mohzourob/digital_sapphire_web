@@ -16,7 +16,6 @@ import NFTItemCard from "../HomePage/TopItems/NFTItemCard";
 
 import ETHSVG from "../SVG/ETH";
 import MainButton from "../Global/Common/MainButton";
-import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 
 import ABI from "../../api.json";
 
@@ -26,8 +25,6 @@ const CreateItemForm = () => {
   const [price, setPrice] = useState<any>();
   const [name, setName] = useState("");
   const [collectionName, setCollectionName] = useState("");
-  const { Moralis } = useMoralis();
-  const contractProcessor = useWeb3ExecuteFunction();
 
   const handelNameChange = (e: { target: { value: string } }) => {
     setName(e.target.value);
@@ -71,29 +68,29 @@ const CreateItemForm = () => {
   };
 
   // intract with smart contract
-  const createItem = async (tokenURI: any) => {
-    await Moralis.enableWeb3();
+  // const createItem = async (tokenURI: any) => {
+  //   await Moralis.enableWeb3();
 
-    let option = {
-      contractAddress: "0x00bC9639C1D1eE949920389aA75aFEc41C904a55",
-      functionName: "createItem(string)",
-      abi: JSON.parse(ABI.result),
-      params: {
-        tokenURI: tokenURI,
-      },
-      msgValue: "",
-    };
+  //   let option = {
+  //     contractAddress: "0x00bC9639C1D1eE949920389aA75aFEc41C904a55",
+  //     functionName: "createItem(string)",
+  //     abi: JSON.parse(ABI.result),
+  //     params: {
+  //       tokenURI: tokenURI,
+  //     },
+  //     msgValue: "",
+  //   };
 
-    await contractProcessor.fetch({
-      params: option,
-      onSuccess(results) {
-        console.log(results);
-      },
-      onError(error) {
-        console.error(error);
-      },
-    });
-  };
+  //   await contractProcessor.fetch({
+  //     params: option,
+  //     onSuccess(results) {
+  //       console.log(results);
+  //     },
+  //     onError(error) {
+  //       console.error(error);
+  //     },
+  //   });
+  // };
 
   return (
     <Container maxWidth="lg">
@@ -269,9 +266,7 @@ const CreateItemForm = () => {
               </Button>
             </Grid>
             <Grid item>
-              <MainButton onClick={() => createItem("test first token")}>
-                Create
-              </MainButton>
+              <MainButton onClick={() => {}}>Create</MainButton>
             </Grid>
           </Grid>
         </Grid>
