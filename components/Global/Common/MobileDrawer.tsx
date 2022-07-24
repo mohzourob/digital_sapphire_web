@@ -31,12 +31,15 @@ import { CollectedSVG, WatchListSVG } from "../../SVG";
 
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useState } from "react";
+import { logout } from "../../../features/userSlice";
 const MobileDrawer = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootStateOrAny) => state.theme.theme);
   const { t } = useTranslation("homePage");
   const router = useRouter();
-  const isAuthenticated = false;
+  const isAuthenticated = useSelector(
+    (state: RootStateOrAny) => state.user.isAuth
+  );
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -48,8 +51,6 @@ const MobileDrawer = () => {
   const handleClick = () => {
     setNestedProfileOpen(!nestedProfileOpen);
   };
-
-  const logout = () => {};
 
   const list = () => (
     <Box
@@ -202,7 +203,7 @@ const MobileDrawer = () => {
         <Divider />
 
         <ListItem disablePadding>
-          <ListItemButton onClick={logout}>
+          <ListItemButton onClick={() => dispatch(logout())}>
             <ListItemIcon>
               <IconButton>
                 <LogoutIcon />

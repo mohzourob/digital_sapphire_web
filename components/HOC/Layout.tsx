@@ -11,10 +11,16 @@ import { setTheme } from "../../features/themeSlice";
 import Footer from "../Global/Footer/Footer";
 import ModalComponent from "../Global/Common/ModalComponent";
 import Navbar from "../Global/Navbar/Navbar";
+import { setToken } from "../../features/userSlice";
 
 const Layout = ({ children, noNav, noFooter }: any) => {
   const router = useRouter();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem("DS-Token");
+    token && dispatch(setToken(token));
+  }, [dispatch]);
 
   useEffect(() => {
     if (

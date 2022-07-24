@@ -1,6 +1,12 @@
 import styled from "@emotion/styled";
 import { Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { openModal } from "../../features/modalSlice";
+import { createNonceCode, loginUser, setError } from "../../features/userSlice";
+import { ethers } from "ethers";
+import { useRouter } from "next/router";
 
 declare global {
   interface Window {
@@ -9,8 +15,47 @@ declare global {
 }
 
 const Login = () => {
-  const metamaskConnect = () => {};
-  const walletConnect = () => {};
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const isAuthenticated = useSelector(
+    (state: RootStateOrAny) => state.user.isAuth
+  );
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/");
+    }
+  }, [isAuthenticated, router]);
+
+  const metamaskConnect = async () => {
+    const { ethereum } = window;
+    let thereIsWallet = Boolean(ethereum && ethereum.isMetaMask);
+    if (!thereIsWallet) {
+      // display modal that he should install metamask
+      dispatch(
+        openModal({
+          message: "You have to install metamask first!",
+          modalType: "info",
+        })
+      );
+    } else {
+      // have a metamask and login
+      try {
+        const accounts = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const { nonceCode } = await createNonceCode(accounts[0]);
+
+        const providerweb3 = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = await providerweb3.getSigner();
+        const signature = await signer.signMessage(nonceCode);
+        dispatch(loginUser(signature, accounts[0]));
+      } catch (error) {
+        dispatch(setError(error));
+      }
+    }
+  };
 
   return (
     <Container maxWidth="sm" sx={{ minHeight: "80vh" }}>
@@ -38,7 +83,7 @@ const Login = () => {
         >
           MetaMask
         </Wallet>
-        <Wallet
+        {/* <Wallet
           variant="text"
           onClick={walletConnect}
           startIcon={
@@ -52,7 +97,7 @@ const Login = () => {
           }
         >
           WalletConnect
-        </Wallet>
+        </Wallet> */}
       </Wallets>
     </Container>
   );

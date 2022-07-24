@@ -30,7 +30,9 @@ import ProfileOptions from "./ProfileOptions";
 const Navbar = () => {
   const dispatch = useDispatch();
   const router = useRouter();
-  const isAuthenticated = false;
+  const isAuthenticated = useSelector(
+    (state: RootStateOrAny) => state.user.isAuth
+  );
   const { t } = useTranslation("homePage");
 
   const theme = useSelector((state: RootStateOrAny) => state.theme.theme);
@@ -44,24 +46,24 @@ const Navbar = () => {
           dir={router.locale === "en" ? "ltr" : "rtl"}
         >
           <Grid container alignItems="center" justifyContent="space-between">
-            <Grid item xs={2} md={0.7} lg={0.5}>
+            <Grid item xs={2} md={1} lg={0.5}>
               <Logo />
             </Grid>
-            <Grid item xs={7} md={4.5} justifyContent="center">
+            <Grid item xs={7} md={9.5} lg={7.5} justifyContent="center">
               <SearchInput text={t("search")} />
             </Grid>
             <Grid
-              sx={{ display: { xs: "none", md: "flex" } }}
+              sx={{ display: { xs: "none", md: "none", lg: "flex" } }}
               item
-              md={1}
+              lg={1}
               justifyContent="center"
             >
               <ExploreMenu />
             </Grid>
             <Grid
-              sx={{ display: { xs: "none", md: "flex" } }}
+              sx={{ display: { xs: "none", md: "none", lg: "flex" } }}
               item
-              md={1}
+              lg={1}
               justifyContent="center"
             >
               <CreateMenu />
@@ -70,9 +72,9 @@ const Navbar = () => {
               <NotificationsPopup />
             </Grid>
             <Grid
-              sx={{ display: { xs: "none", md: "flex" } }}
+              sx={{ display: { xs: "none", md: "none", lg: "flex" } }}
               item
-              md={0.5}
+              lg={0.5}
               justifyContent="center"
             >
               <IconButton
@@ -88,8 +90,8 @@ const Navbar = () => {
 
             <Grid
               item
-              sx={{ display: { xs: "none", md: "flex" } }}
-              md={0.5}
+              sx={{ display: { xs: "none", md: "none", lg: "flex" } }}
+              lg={0.5}
               justifyContent="center"
             >
               <Link
@@ -135,7 +137,7 @@ const Navbar = () => {
             {isAuthenticated && (
               <Grid
                 item
-                sx={{ display: { xs: "none", md: "flex" } }}
+                sx={{ display: { xs: "none", md: "none", lg: "flex" } }}
                 md={isAuthenticated ? 0.5 : 3}
                 lg={isAuthenticated ? 0.5 : 2}
                 justifyContent="flex-end"
@@ -145,7 +147,7 @@ const Navbar = () => {
             )}
 
             <Grid
-              sx={{ display: { xs: "flex", md: "none" } }}
+              sx={{ display: { xs: "flex", md: "flex", lg: "none" } }}
               item
               xs={1}
               justifyContent="end"

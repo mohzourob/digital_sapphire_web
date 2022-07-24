@@ -12,10 +12,12 @@ import SettingsIcon from "@mui/icons-material/Settings";
 
 import { CollectedSVG, LogoutSVG, WatchListSVG } from "../../SVG";
 import Link from "next/link";
+import { logout } from "../../../features/userSlice";
+import { useDispatch } from "react-redux";
 
 const ProfileOptions = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const logout = () => {};
+  const dispatch = useDispatch();
   const open = Boolean(anchorEl);
   const { t } = useTranslation("homePage");
 
@@ -24,10 +26,6 @@ const ProfileOptions = () => {
   };
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const logOut = async () => {
-    await logout();
   };
 
   return (
@@ -88,7 +86,7 @@ const ProfileOptions = () => {
         </Link>
 
         <Divider sx={{ my: 0.5 }} />
-        <MenuItem onClick={logOut} disableRipple>
+        <MenuItem onClick={() => dispatch(logout())} disableRipple>
           <ListItemIcon sx={{ paddingLeft: "5px" }}>
             <LogoutSVG />
           </ListItemIcon>
