@@ -1,0 +1,33 @@
+import styled from "@emotion/styled";
+import Image from "next/image";
+import Link from "next/link";
+
+import logo from "../../../public/logo.png";
+
+const Logo = () => {
+  return (
+    <Link href={"/"} passHref>
+      <StyledLogo>
+        <Image
+          alt="Logo"
+          src={logo}
+          layout="fixed"
+          width={55}
+          height={55}
+          loading="lazy"
+          style={{ borderRadius: "50%" }}
+        />
+      </StyledLogo>
+    </Link>
+  );
+};
+
+const StyledLogo = styled.div`
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  position: relative;
+  cursor: pointer;
+`;
+
+export default Logo;

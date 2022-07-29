@@ -1,0 +1,10 @@
+export { default as CollectedSVG } from "./CollectedSVG";
+export { default as FacebookSVG } from "./FacebookSVG";
+export { default as DiscordSVG } from "./DiscordSVG";
+export { default as InstagramSVG } from "./InstagramSVG";
+export { default as ShareSVG } from "./ShareSVG";
+export { default as TwitterSVG } from "./TwitterSVG";
+export { default as CreatedSVG } from "./CreatedSVG";
+export { default as ActivitySVG } from "./ActivitySVG";
+export { default as WatchListSVG } from "./WatchListSVG";
+export { default as LogoutSVG } from "./LogoutSVG";

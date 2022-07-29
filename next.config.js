@@ -1,17 +1,17 @@
-const withAntdLess = require("next-plugin-antd-less");
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+};
 
-module.exports = withAntdLess({
-  modifyVars: {
-    "@primary-color": "#20283B",
-    "@link-color": "#FF7746",
-    "@heading-color": "#FFFFFF",
-    "@text-color": "#FFFFFF",
-    "@text-color-secondary": "rgba(0, 0, 0, 0.8)",
-    "@border-radius-base": "8px",
-    "@border-color-base": "#83B1D4",
-  },
+const { i18n } = require("./next-i18next.config");
 
-  webpack(config) {
-    return config;
+module.exports = {
+  i18n,
+  nextConfig,
+  images: {
+    domains: ["ipfs.io"],
   },
-});
+  eslint: {
+    dirs: ["pages", "components"], // Only run ESLint on the 'pages' and 'utils' directories during production builds (next build)
+  },
+};

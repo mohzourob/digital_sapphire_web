@@ -1,20 +1,15 @@
-import  { useEffect, useState,  Fragment} from "react";
+import { useEffect, useState, Fragment } from "react";
 
-const ClientOnly = ({ children, ...delegated }: { children: any}) => {
-
+const ClientOnly = ({ children, ...delegated }: { children: any }) => {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
-  if (!hasMounted) return null
+  if (!hasMounted) return null;
 
-  return (
-    <Fragment {...delegated}>
-      {children}
-    </Fragment>
-  );
-}
+  return <Fragment {...delegated}>{children}</Fragment>;
+};
 
-export default ClientOnly
+export default ClientOnly;

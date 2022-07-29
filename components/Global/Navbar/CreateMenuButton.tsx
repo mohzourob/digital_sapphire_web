@@ -1,0 +1,88 @@
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import Menu, { MenuProps } from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Divider from "@mui/material/Divider";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { useState } from "react";
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
+
+const CreateMenuButton = () => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const { t } = useTranslation("homePage");
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div>
+      <Button
+        variant="text"
+        disableElevation
+        onClick={handleClick}
+        endIcon={<KeyboardArrowDownIcon />}
+        color="secondary"
+      >
+        {t("create")}
+      </Button>
+      <StyledMenu anchorEl={anchorEl} open={open} onClose={handleClose}>
+        <Link href="/create-item" passHref>
+          <MenuItem onClick={handleClose} disableRipple>
+            {t("items")}
+          </MenuItem>
+        </Link>
+        <Divider sx={{ my: 0.5 }} />
+        <Link href="/create-collection" passHref>
+          <MenuItem onClick={handleClose} disableRipple>
+            {t("collections")}
+          </MenuItem>
+        </Link>
+      </StyledMenu>
+    </div>
+  );
+};
+
+const StyledMenu = styled((props: MenuProps) => (
+  <Menu
+    elevation={0}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "right",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "right",
+    }}
+    {...props}
+  />
+))(({ theme }) => ({
+  "& .MuiPaper-root": {
+    borderRadius: 6,
+    color:
+      theme.palette.mode === "light"
+        ? theme.palette.secondary.main
+        : theme.palette.grey[300],
+    boxShadow:
+      "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
+    "& .MuiMenu-list": {
+      padding: "4px 0",
+    },
+    border: "1px solid #ccc",
+  },
+  "& .MuiMenuItem-root": {
+    ":hover": {
+      backgroundColor:
+        theme.palette.mode === "light"
+          ? theme.palette.grey[300]
+          : theme.palette.grey[700],
+    },
+  },
+}));
+
+export default CreateMenuButton;
