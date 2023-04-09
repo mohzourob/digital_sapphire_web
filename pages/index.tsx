@@ -11,11 +11,13 @@ import TopOrganizationCarousel from "../components/HomePage/TopOrganication/TopO
 import TopSeller from "../components/HomePage/TopSeller/TopSeller";
 import YouTubeVideo from "../components/HomePage/YouTubeVideo";
 
+
 const Home: NextPage = () => {
   return (
     <Layout>
       <Head>
         <title>Digital Sapphire</title>
+        <link rel="shortcut icon" href="/logo.png" />
       </Head>
       <Hero />
       <TopItemsCarousel />
