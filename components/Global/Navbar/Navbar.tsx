@@ -49,7 +49,7 @@ const Navbar = () => {
             <Grid item xs={2} md={1} lg={0.5}>
               <Logo />
             </Grid>
-            <Grid item xs={7} md={9.5} lg={7.5} justifyContent="center">
+            <Grid item xs={7} md={9.5} lg={5.5} justifyContent="center">
               <SearchInput text={t("search")} />
             </Grid>
             <Grid
