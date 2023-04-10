@@ -36,7 +36,7 @@ const Footer = () => {
               </Typography>
               <Grid container spacing={2}>
                 <Grid item>
-                  <Icon href="#" target="_blank">
+                  <Icon href="https://www.facebook.com/profile.php?id=100082996313881" target="_blank">
                     <svg
                       width={15}
                       height={15}
@@ -54,7 +54,7 @@ const Footer = () => {
                   </Icon>
                 </Grid>
                 <Grid item>
-                  <Icon href="#" target="_blank">
+                  <Icon href="https://www.instagram.com/digitalsapphire.co" target="_blank">
                     <svg
                       width={15}
                       height={15}
@@ -74,7 +74,7 @@ const Footer = () => {
                   </Icon>
                 </Grid>
                 <Grid item>
-                  <Icon href="#" target="_blank">
+                  <Icon href="https://twitter.com/digitalsaphire" target="_blank">
                     <svg
                       width={15}
                       height={15}
@@ -91,7 +91,7 @@ const Footer = () => {
                     </svg>
                   </Icon>
                 </Grid>
-                <Grid item>
+                {/* <Grid item>
                   <Icon href="#" target="_blank">
                     <svg
                       width={15}
@@ -106,7 +106,7 @@ const Footer = () => {
                       />
                     </svg>
                   </Icon>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Stack>
           </Grid>
